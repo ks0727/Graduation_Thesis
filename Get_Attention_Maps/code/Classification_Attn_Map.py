@@ -2,6 +2,7 @@ import re
 from transformers import DonutProcessor, VisionEncoderDecoderModel
 import torch
 from PIL import Image
+from datasets import load_dataset
 import numpy as np
 import numpy.typing as npt
 import matplotlib.pyplot as plt
@@ -10,16 +11,17 @@ from typing import List, Tuple
 
 processor = DonutProcessor.from_pretrained("naver-clova-ix/donut-base-finetuned-rvlcdip")
 model = VisionEncoderDecoderModel.from_pretrained("naver-clova-ix/donut-base-finetuned-rvlcdip")
-model.config.output_attentions = True # I changed this config so that I can get the attention
+#model.config.output_attentions = True # I changed this config so that I can get the attention
 device = "cuda" if torch.cuda.is_available() else "cpu"
 model.to(device)
 
-image = Image.open("../../dataset/dataset/testing_data/images/82092117.png")
-rgb_image = image.convert("RGB") # the original mode was L so convert "L" -> "RGB"
+dataset = load_dataset("hf-internal-testing/example-documents", split="test")
+image = dataset["image"][0]
+
 image.show()
 task_prompt = "<s_rvlcdip>"
 decoder_input_ids = processor.tokenizer(task_prompt, add_special_tokens=False, return_tensors="pt").input_ids
-pixel_values = processor(rgb_image, return_tensors="pt").pixel_values
+pixel_values = processor(image, return_tensors="pt").pixel_values
 
 outputs = model.generate(
     pixel_values.to(device),
