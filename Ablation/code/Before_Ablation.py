@@ -12,13 +12,10 @@ from tqdm import tqdm
 
 processor = DonutProcessor.from_pretrained("naver-clova-ix/donut-base")
 model = VisionEncoderDecoderModel.from_pretrained("naver-clova-ix/donut-base")
-model.encoder.encoder.layers[0].blocks[0].attention.output.dense = nn.Identity()
-model.encoder.encoder.layers[2].blocks[6].attention.output.dense = nn.Identity()
-model.encoder.encoder.layers[2].blocks[7].attention.output.dense = nn.Identity()
 device = "cuda" if torch.cuda.is_available() else "cpu"
 model.to(device)
-
-#print(model.encoder)
+#print(model.encoder.parameters())
+#print(next(model.encoder.encoder.layers[0].blocks[0].attention.output.parameters()))
 
 dataset = load_dataset("hf-internal-testing/example-documents", split="test")
 image = dataset[0]["image"]
