@@ -96,7 +96,7 @@ def stat_attn_maps(att_maps : List[npt.NDArray])->Tuple[float,float]:
     var = sum(attn_vars)/len(attn_vars)
     return avg,var
 
-save_path = "../attention_map/dpa"
+save_path = "../result/dpa"
 attention_avgs = []
 attention_vars = []
 

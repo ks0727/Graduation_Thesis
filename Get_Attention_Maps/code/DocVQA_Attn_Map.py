@@ -100,7 +100,7 @@ def stat_attn_maps(att_maps : List[npt.NDArray])->Tuple[float,float]:
     return avg,var
 
 
-save_path = "../attention_map/vqa"
+save_path = "../result/vqa"
 attention_avgs = []
 attention_vars = []
 

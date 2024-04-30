@@ -15,15 +15,11 @@ model = VisionEncoderDecoderModel.from_pretrained("naver-clova-ix/donut-base")
 model.config.output_attentions = True # I changed this config so that I can get the attention
 device = "cuda" if torch.cuda.is_available() else "cpu"
 model.to(device)
-#original dataset(FUNSD)
-#dataset_path = "../../dataset/dataset/"
-#dataset = torchvision.datasets.ImageFolder(root=dataset_path,transform=transforms.ToTensor())
-# load document image
+
 dataset = load_dataset("hf-internal-testing/example-documents", split="test")
 image = dataset[0]["image"]
-#image = Image.open("../../dataset/dataset/testing_data/images/82092117.png")
-#rgb_image = image.convert("RGB") # the original mode was L so convert "L" -> "RGB"
 image.show()
+
 task_prompt = "<s_iitcdip>"
 decoder_input_ids = processor.tokenizer(task_prompt, add_special_tokens=False, return_tensors="pt").input_ids
 pixel_values = processor(image, return_tensors="pt").pixel_values
@@ -114,7 +110,7 @@ def stat_attn_maps(att_maps : List[npt.NDArray])->Tuple[float,float]:
     var = sum(attn_vars)/len(attn_vars)
     return avg,var
 
-save_path = "../attention_map/pre"
+save_path = "../result/donut_base"
 attention_avgs = []
 attention_vars = []
 
