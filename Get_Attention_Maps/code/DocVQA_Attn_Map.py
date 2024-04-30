@@ -1,0 +1,130 @@
+import re
+from transformers import DonutProcessor,VisionEncoderDecoderModel
+from datasets import load_dataset
+from PIL import Image
+import torch
+import matplotlib.pyplot as plt
+import numpy as np
+import numpy.typing as npt 
+import os
+from typing import Any,List,Tuple
+
+processor = DonutProcessor.from_pretrained("naver-clova-ix/donut-base-finetuned-docvqa")
+model = VisionEncoderDecoderModel.from_pretrained("naver-clova-ix/donut-base-finetuned-docvqa")
+model.config.output_attentions = True # I changed this config so that I can get the attention
+device = "cuda" if torch.cuda.is_available() else "cpu"
+model.to(device)
+#dataset = load_dataset("hf-internal-testing/example-documents", split="test")
+image = Image.open("../../dataset/dataset/testing_data/images/82092117.png")
+image_rgb = image.convert("RGB")
+image.show()
+
+task_prompt = "<s_docvqa><s_question>{user_input}</s_question><s_answer>"
+question = "What is the title of this document?"
+prompt = task_prompt.replace("{user_input}",question)
+
+decoder_input_ids = processor.tokenizer(prompt,add_special_tokens=False,return_tensors="pt").input_ids
+
+pixel_values = processor(image_rgb,return_tensors="pt").pixel_values
+
+outputs = model.generate(
+    pixel_values.to(device),
+    decoder_input_ids =decoder_input_ids.to(device),
+    max_length=model.decoder.config.max_position_embeddings,
+    pad_token_id=processor.tokenizer.pad_token_id,
+    eos_token_id=processor.tokenizer.eos_token_id,
+    use_cache=True,
+    bad_words_ids=[[processor.tokenizer.unk_token_id]],
+    return_dict_in_generate=True,
+)
+
+#(h_image,w_image) : (height of the image, width of the image)
+h_image, w_image = pixel_values.size(2),pixel_values.size(3)
+
+print(f'the length of the encoder_attentions: {len(outputs.encoder_attentions)}')
+
+
+# display the shape of the encoder attentions of the layer
+for i in range(len(outputs.encoder_attentions)):
+    enc_attn = outputs.encoder_attentions[i]
+    print(f'layer :{i} the shape of the encoder attention is {enc_attn.shape}')
+
+
+# this function gives you attention maps
+def get_attn_map(attention :torch.Tensor,num_head : int, save_path : str, ouput_attention:bool = False)->List[npt.NDArray]:
+    global h_image, w_image
+    h,w = h_image//num_head, w_image//num_head #(h,w) == (height of the feature map, width of the feature map)
+    window_size = 10 
+
+    attention_np = attention.to('cpu').detach().numpy().copy() #convert it to numpy array
+    attention_np = np.transpose(attention_np,(1,0,2,3)) #(3072,4,100,100) -> (4,3072,100,100)
+    attention_maps = []
+    for i in range(attention_np.shape[0]):
+        attention_np_i = attention_np[i]
+        
+        attention_np_i = np.reshape(attention_np_i,(h//window_size,w//window_size,-1,window_size,window_size)) # (3072,100,100) -> (64,48,100,10,10)
+        
+        attention_np_i = np.transpose(attention_np_i,(2,0,1,3,4)) #(64,48,100,10,10)->(100,64,48,10,10)
+        
+        attention_np_i_new = attention_np_i[0]#(64,48,10,10)
+        attention_map_i = np.zeros((h,w)) #(640,480)
+        for a in range(0,h,window_size):
+            for b in  range(0,w,window_size):
+                attention_map_i[a:a+window_size,b:b+window_size] = attention_np_i_new[a//window_size][b//window_size] #put puthes into the map
+
+        attention_maps.append(attention_map_i)
+
+        # plot and save the attention map
+        attn_map_name = "num_head_" + str(num_head) + "_" + str(i+1) + "th.png"
+        path = os.path.join(save_path,attn_map_name)
+        plt.figure(figsize=(10,10))
+        plt.imshow(attention_map_i,vmin=0,vmax=0.8,interpolation='nearest')
+        plt.xlabel('width')
+        plt.ylabel('height')
+        plt.title(f'{i+1}th/{num_head} head attention map <classification>')
+        plt.colorbar()
+        plt.savefig(path)
+
+    return attention_maps
+
+def stat_attn_maps(att_maps : List[npt.NDArray])->Tuple[float,float]:
+    attn_means = []
+    attn_vars = []
+    for attn_map in att_maps:
+        attn_mean = np.mean(attn_map)
+        attn_var = np.var(attn_map)
+        attn_means.append(attn_mean)
+        attn_vars.append(attn_var)
+    avg = sum(attn_means)/len(attn_means)
+    var = sum(attn_vars)/len(attn_vars)
+    return avg,var
+
+
+save_path = "../attention_map/vqa"
+attention_avgs = []
+attention_vars = []
+
+for i in range(len(outputs.encoder_attentions)):
+    attn_maps = get_attn_map(outputs.encoder_attentions[i],outputs.encoder_attentions[i].shape[1],save_path=save_path)
+    avg, var = stat_attn_maps(attn_maps)
+    attention_avgs.append(avg)
+    attention_vars.append(var)
+
+with open("vqa_attention_avg_result.txt","w") as f:
+    s = [str(x) for x in attention_avgs]
+    t = [str(x) for x in attention_vars]
+    s = " ".join(s)
+    t = " ".join(t)
+    s += '\n'
+    t += '\n'
+    f.write("mean:  ")
+    f.write(s)
+    f.write("variance:  ")
+    f.write(t)
+sequence = processor.batch_decode(outputs.sequences)[0]
+sequence = sequence.replace(processor.tokenizer.eos_token,"").replace(processor.tokenizer.pad_token,"")
+
+sequence = re.sub(r"<.*?>","",sequence,count=1).strip()
+print("---------------------------------------------------------------------------------------")
+print(processor.token2json(sequence))
+print("---------------------------------------------------------------------------------------")
