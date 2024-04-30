@@ -14,10 +14,9 @@ model = VisionEncoderDecoderModel.from_pretrained("naver-clova-ix/donut-base-fin
 model.config.output_attentions = True # I changed this config so that I can get the attention
 device = "cuda" if torch.cuda.is_available() else "cpu"
 model.to(device)
-#dataset = load_dataset("hf-internal-testing/example-documents", split="test")
-image = Image.open("../../dataset/dataset/testing_data/images/82092117.png")
-image_rgb = image.convert("RGB")
-image.show()
+dataset = load_dataset("hf-internal-testing/example-documents", split="test")
+image = dataset["image"][0]
+
 
 task_prompt = "<s_docvqa><s_question>{user_input}</s_question><s_answer>"
 question = "What is the title of this document?"
@@ -25,7 +24,7 @@ prompt = task_prompt.replace("{user_input}",question)
 
 decoder_input_ids = processor.tokenizer(prompt,add_special_tokens=False,return_tensors="pt").input_ids
 
-pixel_values = processor(image_rgb,return_tensors="pt").pixel_values
+pixel_values = processor(image,return_tensors="pt").pixel_values
 
 outputs = model.generate(
     pixel_values.to(device),
@@ -81,7 +80,7 @@ def get_attn_map(attention :torch.Tensor,num_head : int, save_path : str, ouput_
         plt.imshow(attention_map_i,vmin=0,vmax=0.8,interpolation='nearest')
         plt.xlabel('width')
         plt.ylabel('height')
-        plt.title(f'{i+1}th/{num_head} head attention map <classification>')
+        plt.title(f'{i+1}th/{num_head} head attention map <DocVQA>')
         plt.colorbar()
         plt.savefig(path)
 

@@ -15,15 +15,14 @@ model.config.output_attentions = True # changed this config to get the attention
 device = "cuda" if torch.cuda.is_available() else "cpu"
 model.to(device)
 # load document image
-#dataset = load_dataset("hf-internal-testing/example-documents", split="test")
-image = Image.open("../../dataset/dataset/testing_data/images/82092117.png")
-image_rgb = image.convert("RGB")
+dataset = load_dataset("hf-internal-testing/example-documents", split="test")
+image = dataset["image"][0]
 image.show()
 # prepare decoder inputs
 task_prompt = "<s_cord-v2>"
 decoder_input_ids = processor.tokenizer(task_prompt, add_special_tokens=False, return_tensors="pt").input_ids
 
-pixel_values = processor(image_rgb, return_tensors="pt").pixel_values
+pixel_values = processor(image, return_tensors="pt").pixel_values
 
 outputs = model.generate(
     pixel_values.to(device),
