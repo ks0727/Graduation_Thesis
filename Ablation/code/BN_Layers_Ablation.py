@@ -8,9 +8,10 @@ import matplotlib.pyplot as plt
 from datasets import load_dataset
 import torch.nn as nn
 from typing import Any
+from Loss import CELWithDiffenretLength
 processor = DonutProcessor.from_pretrained("naver-clova-ix/donut-base")
 model = VisionEncoderDecoderModel.from_pretrained("naver-clova-ix/donut-base")
-model.encoder.config.output_scores = True
+#model.encoder.config.output_scores = True
 #model.encoder.encoder.layers[0].blocks[0].layernorm_before = nn.Identity()
 #model.encoder.encoder.layers[0].blocks[0].layernorm_after = nn.Identity()
 #model.encoder.encoder.layers[0].blocks[1].layernorm_before = nn.Identity()
@@ -51,7 +52,7 @@ model.encoder.config.output_scores = True
 #model.encoder.encoder.layers[3].blocks[0].layernorm_after = nn.Identity()
 #model.encoder.encoder.layers[3].blocks[1].layernorm_before = nn.Identity()
 #model.encoder.encoder.layers[3].blocks[1].layernorm_after = nn.Identity()
-print(model.encoder.encoder)
+
 device = "cuda" if torch.cuda.is_available() else "cpu"
 model.to(device)
 #print(model.encoder)
@@ -112,9 +113,10 @@ def softmax(scores:torch.Tensor):
         y_pred[i] = e_x/ e_x.sum()
     return y_pred
 
-#prediction = softmax(outputs.scores)
-#loss = cross_entropy_loss(label_ids,prediction)
-#print(f'loss : {loss}')
+prediction = softmax(outputs.scores)
+criterion = CELWithDiffenretLength(seq_truth=ans_label,seq_pred=prediction)
+loss = criterion.forward()
+print(f'loss : {loss}')
 
 #seq = get_ids_from_tokens(outputs.scores)
 #res = processor.tokenizer.batch_decode(seq)

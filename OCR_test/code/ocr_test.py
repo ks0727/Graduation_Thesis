@@ -34,7 +34,6 @@ for idx,sample in tqdm(enumerate(dataset),total=len(dataset)):
         bad_words_ids=[[processor.tokenizer.unk_token_id]],
         return_dict_in_generate=True,
     )
-
     decoded_results = processor.tokenizer.batch_decode(outputs.sequences)
     sequence = processor.batch_decode(outputs.sequences)[0]
     sequence = sequence.replace(processor.tokenizer.eos_token, "").replace(processor.tokenizer.pad_token, "")
