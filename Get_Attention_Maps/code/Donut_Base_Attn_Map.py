@@ -110,7 +110,7 @@ def stat_attn_maps(att_maps : List[npt.NDArray])->Tuple[float,float]:
     var = sum(attn_vars)/len(attn_vars)
     return avg,var
 
-save_path = "../result/donut_base"
+save_path = "./result/donut_base"
 attention_avgs = []
 attention_vars = []
 
@@ -133,7 +133,35 @@ with open("pre_attention_avg_result.txt","w") as f:
     f.write(t)
 
 
-print(outputs.sequences.size())
+def get_mean_bar_graph(mean:List[float],save_path:str)->None:
+    stage = list(range(len(mean)))
+    label = ['stage'+str(i+1) for i in range(len(mean))]
+    plt.figure(figsize=(10,10))
+    plt.bar(stage,mean,tick_label=label)
+    plt.xlabel("stages")
+    plt.ylabel("mean")
+    plt.title("mean values at each stage")
+    graph_name = "mean_at_each_stage_donut_base"
+    path = os.path.join(save_path,graph_name)
+    plt.show()
+    plt.savefig(path)
+
+def get_variance_bar_graph(variance:List[float],save_path:str)->None:
+    stage = list(range(len(variance)))
+    label = ['stage'+str(i+1) for i in range(len(variance))]
+    plt.figure(figsize=(10,10))
+    plt.bar(stage,variance,tick_label=label)
+    plt.xlabel("stages")
+    plt.ylabel("variance")
+    plt.title("variance values at each stage")
+    graph_name = "variance_at_each_stage_donut_base"
+    path = os.path.join(save_path,graph_name)
+    plt.show()
+    plt.savefig(path)
+
+get_variance_bar_graph(attention_vars,save_path)
+get_mean_bar_graph(attention_avgs,save_path)
+
 decoded_results = processor.tokenizer.batch_decode(outputs.sequences)
 #sequence = processor.batch_decode(outputs.sequences)[0]
 #sequence = sequence.replace(processor.tokenizer.eos_token, "").replace(processor.tokenizer.pad_token, "")

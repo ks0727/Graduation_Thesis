@@ -8,19 +8,19 @@ import matplotlib.pyplot as plt
 from datasets import load_dataset
 import torch.nn as nn
 from typing import Any
-from Loss import CELWithDiffenretLength
+from Loss import BERT_COS_SIM
 processor = DonutProcessor.from_pretrained("naver-clova-ix/donut-base")
 model = VisionEncoderDecoderModel.from_pretrained("naver-clova-ix/donut-base")
 #model.encoder.config.output_scores = True
-#model.encoder.encoder.layers[0].blocks[0].layernorm_before = nn.Identity()
-#model.encoder.encoder.layers[0].blocks[0].layernorm_after = nn.Identity()
-#model.encoder.encoder.layers[0].blocks[1].layernorm_before = nn.Identity()
-#model.encoder.encoder.layers[0].blocks[1].layernorm_after = nn.Identity()
-#model.encoder.encoder.layers[1].blocks[0].layernorm_before = nn.Identity()
-#model.encoder.encoder.layers[1].blocks[0].layernorm_after = nn.Identity()
-#model.encoder.encoder.layers[1].blocks[1].layernorm_before = nn.Identity()
-#model.encoder.encoder.layers[1].blocks[1].layernorm_after = nn.Identity()
-#model.encoder.encoder.layers[2].blocks[0].layernorm_before = nn.Identity()
+model.encoder.encoder.layers[0].blocks[0].layernorm_before = nn.Identity()
+model.encoder.encoder.layers[0].blocks[0].layernorm_after = nn.Identity()
+model.encoder.encoder.layers[0].blocks[1].layernorm_before = nn.Identity()
+model.encoder.encoder.layers[0].blocks[1].layernorm_after = nn.Identity()
+model.encoder.encoder.layers[1].blocks[0].layernorm_before = nn.Identity()
+model.encoder.encoder.layers[1].blocks[0].layernorm_after = nn.Identity()
+model.encoder.encoder.layers[1].blocks[1].layernorm_before = nn.Identity()
+model.encoder.encoder.layers[1].blocks[1].layernorm_after = nn.Identity()
+model.encoder.encoder.layers[2].blocks[0].layernorm_before = nn.Identity()
 #model.encoder.encoder.layers[2].blocks[0].layernorm_after = nn.Identity()
 #model.encoder.encoder.layers[2].blocks[1].layernorm_before = nn.Identity()
 #model.encoder.encoder.layers[2].blocks[1].layernorm_after = nn.Identity()
@@ -114,9 +114,9 @@ def softmax(scores:torch.Tensor):
     return y_pred
 
 prediction = softmax(outputs.scores)
-criterion = CELWithDiffenretLength(seq_truth=ans_label,seq_pred=prediction)
-loss = criterion.forward()
-print(f'loss : {loss}')
+
+
+
 
 #seq = get_ids_from_tokens(outputs.scores)
 #res = processor.tokenizer.batch_decode(seq)
@@ -129,3 +129,6 @@ print("-------------------------------------------")
 print("output : ", processor.token2json(sequence))
 print("-------------------------------------------")
 
+criterion = BERT_COS_SIM(query=ans_label,sentence=sequence)
+loss = criterion.forward()
+print(f'similarity between two sentences : {loss[0][0]}')

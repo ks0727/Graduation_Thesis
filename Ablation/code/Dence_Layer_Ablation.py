@@ -51,6 +51,7 @@ ans_label = "11:14 to 11:39 a.m. Coffee Break Coffee will be served for men and 
 "Tufts University School of Medicine; Dr. Robert H. Cotton, ITT Continental Baking Company; Dr. Owen Fennema, "\
 "University of Wis- consin; Dr. Robert E. Hardenburg, USDA. 12:25 to 12:58 p.m. Questions and Answers 12:58 to 4:00 p.m. "\
 "Exhibits Open Capt. Jack Stoney Room 2:00 to 5:00 p.m. TRRF Scientific Advisory Council Meeting Ballroom Foyer"
+
 label_ids = processor.tokenizer(ans_label,add_special_tokens = False,return_tensors="pt").input_ids[0]
 label_ids = label_ids.to('cpu').detach().numpy().copy()
 outputs = model.generate(

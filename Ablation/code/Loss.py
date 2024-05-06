@@ -1,5 +1,6 @@
+import torch
 import numpy as np
-from transformers import DonutProcessor
+from transformers import DonutProcessor,BertTokenizer,BertModel
 
 class CELWithDiffenretLength():
     def __init__(self,seq_pred,seq_truth):
@@ -17,5 +18,22 @@ class CELWithDiffenretLength():
             loss += - np.log(self.seq_pred[i][self.truth_labels[i]])
         loss /= iters
         return loss
-
-            
+    
+class BERT_COS_SIM():
+    def __init__(self,query,sentence) -> None:
+        self.query = query
+        self.sentence = sentence
+        self.tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+        self.model = BertModel.from_pretrained('bert-base-uncased')
+        self.tokenized_sentence = self.tokenizer(sentence,padding=True,truncation=True,return_tensors="pt")
+        self.tokenized_query = self.tokenizer(query,padding=True,truncation=True,return_tensors="pt")
+        
+    def forward(self):
+        with torch.no_grad():
+            sentence_output = self.model(**self.tokenized_sentence)
+            query_output = self.model(**self.tokenized_query)
+        
+        query_embedding = query_output[0][:,0,:].numpy()
+        sentence_embedding = sentence_output[0][:,0,:].numpy()
+        cos_sim = np.inner(query_embedding,sentence_embedding)
+        return cos_sim
