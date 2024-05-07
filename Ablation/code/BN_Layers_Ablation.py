@@ -86,6 +86,8 @@ outputs = model.generate(
     return_dict_in_generate=True,
 )
 
+
+
 #By using this function, you can get the sequence of token ids whose probability is the highest among all vocabrary
 def get_ids_from_tokens(scores:torch.Tensor):
     seq = []
@@ -114,10 +116,6 @@ def softmax(scores:torch.Tensor):
     return y_pred
 
 prediction = softmax(outputs.scores)
-
-
-
-
 #seq = get_ids_from_tokens(outputs.scores)
 #res = processor.tokenizer.batch_decode(seq)
 

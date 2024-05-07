@@ -7,31 +7,20 @@ import numpy as np
 import matplotlib.pyplot as plt
 from datasets import load_dataset
 import torch.nn as nn
-from typing import Any
+from typing import Any,Tuple
+from Loss import BERT_COS_SIM
+
 processor = DonutProcessor.from_pretrained("naver-clova-ix/donut-base")
 model = VisionEncoderDecoderModel.from_pretrained("naver-clova-ix/donut-base")
 model.encoder.config.output_scores = True
-model.encoder.encoder.layers[0].blocks[0].attention.output.dense = nn.Identity()
-model.encoder.encoder.layers[0].blocks[1].attention.output.dense = nn.Identity()
-model.encoder.encoder.layers[1].blocks[0].attention.output.dense = nn.Identity()
-model.encoder.encoder.layers[1].blocks[1].attention.output.dense = nn.Identity()
-model.encoder.encoder.layers[2].blocks[0].attention.output.dense = nn.Identity()
-model.encoder.encoder.layers[2].blocks[1].attention.output.dense = nn.Identity()
-model.encoder.encoder.layers[2].blocks[2].attention.output.dense = nn.Identity()
-model.encoder.encoder.layers[2].blocks[3].attention.output.dense = nn.Identity()
-model.encoder.encoder.layers[2].blocks[4].attention.output.dense = nn.Identity()
-model.encoder.encoder.layers[2].blocks[5].attention.output.dense = nn.Identity()
-model.encoder.encoder.layers[2].blocks[6].attention.output.dense = nn.Identity()
-model.encoder.encoder.layers[2].blocks[7].attention.output.dense = nn.Identity()
-model.encoder.encoder.layers[2].blocks[8].attention.output.dense = nn.Identity()
-model.encoder.encoder.layers[2].blocks[9].attention.output.dense = nn.Identity()
-model.encoder.encoder.layers[2].blocks[10].attention.output.dense = nn.Identity()
-model.encoder.encoder.layers[2].blocks[11].attention.output.dense = nn.Identity()
-model.encoder.encoder.layers[2].blocks[12].attention.output.dense = nn.Identity()
-model.encoder.encoder.layers[2].blocks[13].attention.output.dense = nn.Identity()
-model.encoder.encoder.layers[3].blocks[0].attention.output.dense = nn.Identity()
-model.encoder.encoder.layers[3].blocks[1].attention.output.dense = nn.Identity()
-print(model.encoder)
+
+def remove_dence_layer(layer_block_pairs:Tuple[int,int])->None:
+    for layer,block in layer_block_pairs:
+        model.encoder.encoder.layers[layer].blocks[block].attention.output.dense = nn.Identity()
+
+layer_block_pairs_to_remove = [(2,11),(2,12),(2,13),(3,0),(3,1)] #substitute (layer,block) pairs into this list
+remove_dence_layer(layer_block_pairs_to_remove)
+
 device = "cuda" if torch.cuda.is_available() else "cpu"
 model.to(device)
 #print(model.encoder)
@@ -93,9 +82,7 @@ def softmax(scores:torch.Tensor):
         y_pred[i] = e_x/ e_x.sum()
     return y_pred
 
-#prediction = softmax(outputs.scores)
-#loss = cross_entropy_loss(label_ids,prediction)
-#print(f'loss : {loss}')
+
 
 #seq = get_ids_from_tokens(outputs.scores)
 #res = processor.tokenizer.batch_decode(seq)
@@ -108,3 +95,8 @@ print("-------------------------------------------")
 print("output : ", processor.token2json(sequence))
 print("-------------------------------------------")
 
+
+prediction = softmax(outputs.scores)
+criterion = BERT_COS_SIM(query=ans_label,sentence=sequence)
+loss = criterion.forward()
+print(f'loss : {loss[0][0]}')

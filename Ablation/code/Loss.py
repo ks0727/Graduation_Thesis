@@ -35,5 +35,11 @@ class BERT_COS_SIM():
         
         query_embedding = query_output[0][:,0,:].numpy()
         sentence_embedding = sentence_output[0][:,0,:].numpy()
-        cos_sim = np.inner(query_embedding,sentence_embedding)
+        l2_query = np.linalg.norm(query_embedding,ord=2,axis=-1,keepdims=True)
+        l2_query[l2_query==0] = 1
+        query_embedding_normzlized = query_embedding/l2_query
+        l2_sen = np.linalg.norm(sentence_embedding,ord=2,axis=-1,keepdims=True)
+        l2_sen[l2_sen==0] = 1
+        sentence_embedding_normzlized = sentence_embedding/l2_sen
+        cos_sim = np.inner(query_embedding_normzlized,sentence_embedding_normzlized)
         return cos_sim
