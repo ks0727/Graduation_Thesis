@@ -9,16 +9,18 @@ from datasets import load_dataset
 import torch.nn as nn
 from typing import Any,Tuple
 from Loss import BERT_COS_SIM
+from Cross_Attention_Map import CrossAttentionMap
 
 processor = DonutProcessor.from_pretrained("naver-clova-ix/donut-base")
 model = VisionEncoderDecoderModel.from_pretrained("naver-clova-ix/donut-base")
 model.encoder.config.output_scores = True
+model.config.output_attentions = True
 
 def remove_dence_layer(layer_block_pairs:Tuple[int,int])->None:
     for layer,block in layer_block_pairs:
         model.encoder.encoder.layers[layer].blocks[block].attention.output.dense = nn.Identity()
 
-layer_block_pairs_to_remove = [(2,11),(2,12),(2,13),(3,0),(3,1)] #substitute (layer,block) pairs into this list
+layer_block_pairs_to_remove = [(2,6),(2,7),(2,8),(2,9),(2,10)] #substitute (layer,block) pairs into this list
 remove_dence_layer(layer_block_pairs_to_remove)
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -82,8 +84,11 @@ def softmax(scores:torch.Tensor):
         y_pred[i] = e_x/ e_x.sum()
     return y_pred
 
+path = '../result/CrossAttentionMaps/After_Ablation'
+cross_attns = outputs.cross_attentions
 
-
+cross_attn_map = CrossAttentionMap(cross_attns=cross_attns,path=path)
+cross_attn_map.get_cross_attn_maps()
 #seq = get_ids_from_tokens(outputs.scores)
 #res = processor.tokenizer.batch_decode(seq)
 

@@ -7,51 +7,23 @@ import numpy as np
 import matplotlib.pyplot as plt
 from datasets import load_dataset
 import torch.nn as nn
-from typing import Any
+from typing import Any,Tuple
 from Loss import BERT_COS_SIM
+from Cross_Attention_Map import CrossAttentionMap
+
 processor = DonutProcessor.from_pretrained("naver-clova-ix/donut-base")
 model = VisionEncoderDecoderModel.from_pretrained("naver-clova-ix/donut-base")
-#model.encoder.config.output_scores = True
-model.encoder.encoder.layers[0].blocks[0].layernorm_before = nn.Identity()
-model.encoder.encoder.layers[0].blocks[0].layernorm_after = nn.Identity()
-model.encoder.encoder.layers[0].blocks[1].layernorm_before = nn.Identity()
-model.encoder.encoder.layers[0].blocks[1].layernorm_after = nn.Identity()
-model.encoder.encoder.layers[1].blocks[0].layernorm_before = nn.Identity()
-model.encoder.encoder.layers[1].blocks[0].layernorm_after = nn.Identity()
-model.encoder.encoder.layers[1].blocks[1].layernorm_before = nn.Identity()
-model.encoder.encoder.layers[1].blocks[1].layernorm_after = nn.Identity()
-model.encoder.encoder.layers[2].blocks[0].layernorm_before = nn.Identity()
-#model.encoder.encoder.layers[2].blocks[0].layernorm_after = nn.Identity()
-#model.encoder.encoder.layers[2].blocks[1].layernorm_before = nn.Identity()
-#model.encoder.encoder.layers[2].blocks[1].layernorm_after = nn.Identity()
-#model.encoder.encoder.layers[2].blocks[2].layernorm_before = nn.Identity()
-#model.encoder.encoder.layers[2].blocks[2].layernorm_after = nn.Identity()
-#model.encoder.encoder.layers[2].blocks[3].layernorm_before = nn.Identity()
-#model.encoder.encoder.layers[2].blocks[3].layernorm_after = nn.Identity()
-#model.encoder.encoder.layers[2].blocks[4].layernorm_before = nn.Identity()
-#model.encoder.encoder.layers[2].blocks[4].layernorm_after = nn.Identity()
-#model.encoder.encoder.layers[2].blocks[5].layernorm_before = nn.Identity()
-#model.encoder.encoder.layers[2].blocks[5].layernorm_after = nn.Identity()
-#model.encoder.encoder.layers[2].blocks[6].layernorm_before = nn.Identity()
-#model.encoder.encoder.layers[2].blocks[6].layernorm_after = nn.Identity()
-#model.encoder.encoder.layers[2].blocks[7].layernorm_before = nn.Identity()
-#model.encoder.encoder.layers[2].blocks[7].layernorm_after = nn.Identity()
-#model.encoder.encoder.layers[2].blocks[8].layernorm_before = nn.Identity()
-#model.encoder.encoder.layers[2].blocks[8].layernorm_after = nn.Identity()
-#model.encoder.encoder.layers[2].blocks[9].layernorm_before = nn.Identity()
-#model.encoder.encoder.layers[2].blocks[9].layernorm_after = nn.Identity()
-#model.encoder.encoder.layers[2].blocks[10].layernorm_before = nn.Identity()
-#model.encoder.encoder.layers[2].blocks[10].layernorm_after = nn.Identity()
-#model.encoder.encoder.layers[2].blocks[11].layernorm_before = nn.Identity()
-#model.encoder.encoder.layers[2].blocks[11].layernorm_after = nn.Identity()
-#model.encoder.encoder.layers[2].blocks[12].layernorm_before = nn.Identity()
-#model.encoder.encoder.layers[2].blocks[12].layernorm_after = nn.Identity()
-#model.encoder.encoder.layers[2].blocks[13].layernorm_before = nn.Identity()
-#model.encoder.encoder.layers[2].blocks[13].layernorm_after = nn.Identity()
-#model.encoder.encoder.layers[3].blocks[0].layernorm_before = nn.Identity()
-#model.encoder.encoder.layers[3].blocks[0].layernorm_after = nn.Identity()
-#model.encoder.encoder.layers[3].blocks[1].layernorm_before = nn.Identity()
-#model.encoder.encoder.layers[3].blocks[1].layernorm_after = nn.Identity()
+
+def remove_layer_norm_before(layer_block_pairs:Tuple[int,int])->None:
+    for layer,block in layer_block_pairs:
+        model.encoder.encoder.layers[layer].blocks[block].layernorm_before = nn.Identity()
+def remove_layer_norm_after(layer_block_pairs:Tuple[int,int])->None:
+    for layer,block in layer_block_pairs:
+        model.encoder.encoder.layers[layer].blocks[block].layernorm_after = nn.Identity()
+
+layer_block_pairs_to_remove = [(3,1)] #substitute (layer,block) pairs into this list
+remove_layer_norm_before(layer_block_pairs_to_remove)
+remove_layer_norm_after(layer_block_pairs_to_remove)
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 model.to(device)
@@ -86,8 +58,6 @@ outputs = model.generate(
     return_dict_in_generate=True,
 )
 
-
-
 #By using this function, you can get the sequence of token ids whose probability is the highest among all vocabrary
 def get_ids_from_tokens(scores:torch.Tensor):
     seq = []
@@ -115,9 +85,13 @@ def softmax(scores:torch.Tensor):
         y_pred[i] = e_x/ e_x.sum()
     return y_pred
 
+
+path = '../result/CrossAttentionMaps/LN_layer_Ablation'
+cross_attns = outputs.cross_attentions
+
+#cross_attn_map = CrossAttentionMap(cross_attns=cross_attns,path=path)
+#cross_attn_map.get_cross_attn_maps()
 prediction = softmax(outputs.scores)
-#seq = get_ids_from_tokens(outputs.scores)
-#res = processor.tokenizer.batch_decode(seq)
 
 decoded_results = processor.tokenizer.batch_decode(outputs.sequences)
 sequence = processor.batch_decode(outputs.sequences)[0]
