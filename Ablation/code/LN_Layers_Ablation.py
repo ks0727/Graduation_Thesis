@@ -22,7 +22,7 @@ def remove_layer_norm_after(layer_block_pairs:Tuple[int,int])->None:
         model.encoder.encoder.layers[layer].blocks[block].layernorm_after = nn.Identity()
 
 layer_block_pairs_to_remove = [(3,1)] #substitute (layer,block) pairs into this list
-remove_layer_norm_before(layer_block_pairs_to_remove)
+#remove_layer_norm_before(layer_block_pairs_to_remove)
 remove_layer_norm_after(layer_block_pairs_to_remove)
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -104,3 +104,8 @@ print("-------------------------------------------")
 criterion = BERT_COS_SIM(query=ans_label,sentence=sequence)
 loss = criterion.forward()
 print(f'similarity between two sentences : {loss[0][0]}')
+
+ln_before_sims = [0.93750,0.97338,0.99057,0.644617,0.570387,0.534322,0.62194,0.605492,0.534322,0.480766,0.5668034,0.582249,0.60666,0.495132,0.683659,0.683659,0.683659,0.499866,0.686455,0.686455]
+ln_after_sims = [0.98986,0.971098,0.99364,0.98223,0.480766,0.746054,0.603211,0.956122,0.90858,0.98614,0.55668,0.57819,0.00901,0.69654,0.71322,0.61606,0.574877,0.64486,0.763875,0.636391]
+ln_both_sims = [0.945670,0.637312,0.990499,0.653348,0.403636,0.551515,0.480766,0.945670,0.585094,0.585094,0.409299,0.495281,0.683659,0.683659,0.570819,0.370292,0.68365,0.68365,0.540240,0.498782]
+

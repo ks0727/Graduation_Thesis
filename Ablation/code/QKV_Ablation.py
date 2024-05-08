@@ -7,71 +7,29 @@ import numpy as np
 import matplotlib.pyplot as plt
 from datasets import load_dataset
 import torch.nn as nn
-from typing import Any
+from typing import Any,Tuple
+from Loss import BERT_COS_SIM
+
 processor = DonutProcessor.from_pretrained("naver-clova-ix/donut-base")
 model = VisionEncoderDecoderModel.from_pretrained("naver-clova-ix/donut-base")
 model.encoder.config.output_scores = True
-#model.encoder.encoder.layers[0].blocks[0].attention.self.query = nn.Identity()
-#model.encoder.encoder.layers[0].blocks[0].attention.self.key = nn.Identity()
-#model.encoder.encoder.layers[0].blocks[0].attention.self.value = nn.Identity()
-#model.encoder.encoder.layers[0].blocks[1].attention.self.query = nn.Identity()
-#model.encoder.encoder.layers[0].blocks[1].attention.self.key = nn.Identity()
-#model.encoder.encoder.layers[0].blocks[1].attention.self.value = nn.Identity()
-#model.encoder.encoder.layers[1].blocks[0].attention.self.query = nn.Identity()
-#model.encoder.encoder.layers[1].blocks[0].attention.self.key = nn.Identity()
-#model.encoder.encoder.layers[1].blocks[0].attention.self.value = nn.Identity()
-#model.encoder.encoder.layers[1].blocks[1].attention.self.query = nn.Identity()
-#model.encoder.encoder.layers[1].blocks[1].attention.self.key = nn.Identity()
-#model.encoder.encoder.layers[1].blocks[1].attention.self.value = nn.Identity()
-#model.encoder.encoder.layers[2].blocks[0].attention.self.query = nn.Identity()
-#model.encoder.encoder.layers[2].blocks[0].attention.self.key = nn.Identity()
-#model.encoder.encoder.layers[2].blocks[0].attention.self.value = nn.Identity()
-#model.encoder.encoder.layers[2].blocks[1].attention.self.query = nn.Identity()
-#model.encoder.encoder.layers[2].blocks[1].attention.self.key = nn.Identity()
-#model.encoder.encoder.layers[2].blocks[1].attention.self.value = nn.Identity()
-#model.encoder.encoder.layers[2].blocks[2].attention.self.query = nn.Identity()
-#model.encoder.encoder.layers[2].blocks[2].attention.self.key = nn.Identity()
-#model.encoder.encoder.layers[2].blocks[2].attention.self.value = nn.Identity()
-#model.encoder.encoder.layers[2].blocks[3].attention.self.query = nn.Identity()
-#model.encoder.encoder.layers[2].blocks[3].attention.self.key = nn.Identity()
-#model.encoder.encoder.layers[2].blocks[3].attention.self.value = nn.Identity()
-model.encoder.encoder.layers[2].blocks[4].attention.self.query = nn.Identity()
-model.encoder.encoder.layers[2].blocks[4].attention.self.key = nn.Identity()
-model.encoder.encoder.layers[2].blocks[4].attention.self.value = nn.Identity()
-model.encoder.encoder.layers[2].blocks[5].attention.self.query = nn.Identity()
-model.encoder.encoder.layers[2].blocks[5].attention.self.key = nn.Identity()
-model.encoder.encoder.layers[2].blocks[5].attention.self.value = nn.Identity()
-model.encoder.encoder.layers[2].blocks[6].attention.self.query = nn.Identity()
-model.encoder.encoder.layers[2].blocks[6].attention.self.key = nn.Identity()
-model.encoder.encoder.layers[2].blocks[6].attention.self.value = nn.Identity()
-model.encoder.encoder.layers[2].blocks[7].attention.self.query = nn.Identity()
-model.encoder.encoder.layers[2].blocks[7].attention.self.key = nn.Identity()
-model.encoder.encoder.layers[2].blocks[7].attention.self.value = nn.Identity()
-model.encoder.encoder.layers[2].blocks[8].attention.self.query = nn.Identity()
-model.encoder.encoder.layers[2].blocks[8].attention.self.key = nn.Identity()
-model.encoder.encoder.layers[2].blocks[8].attention.self.value = nn.Identity()
-model.encoder.encoder.layers[2].blocks[9].attention.self.query = nn.Identity()
-model.encoder.encoder.layers[2].blocks[9].attention.self.key = nn.Identity()
-model.encoder.encoder.layers[2].blocks[9].attention.self.value = nn.Identity()
-model.encoder.encoder.layers[2].blocks[10].attention.self.query = nn.Identity()
-model.encoder.encoder.layers[2].blocks[10].attention.self.key = nn.Identity()
-model.encoder.encoder.layers[2].blocks[10].attention.self.value = nn.Identity()
-model.encoder.encoder.layers[2].blocks[11].attention.self.query = nn.Identity()
-model.encoder.encoder.layers[2].blocks[11].attention.self.key = nn.Identity()
-model.encoder.encoder.layers[2].blocks[11].attention.self.value = nn.Identity()
-model.encoder.encoder.layers[2].blocks[12].attention.self.query = nn.Identity()
-model.encoder.encoder.layers[2].blocks[12].attention.self.key = nn.Identity()
-model.encoder.encoder.layers[2].blocks[12].attention.self.value = nn.Identity()
-model.encoder.encoder.layers[2].blocks[13].attention.self.query = nn.Identity()
-model.encoder.encoder.layers[2].blocks[13].attention.self.key = nn.Identity()
-model.encoder.encoder.layers[2].blocks[13].attention.self.value = nn.Identity()
-#model.encoder.encoder.layers[3].blocks[0].attention.self.query = nn.Identity()
-#model.encoder.encoder.layers[3].blocks[0].attention.self.key = nn.Identity()
-#model.encoder.encoder.layers[3].blocks[0].attention.self.value = nn.Identity()
-#model.encoder.encoder.layers[3].blocks[1].attention.self.query = nn.Identity()
-#model.encoder.encoder.layers[3].blocks[1].attention.self.key = nn.Identity()
-#model.encoder.encoder.layers[3].blocks[1].attention.self.value = nn.Identity()
-print(model.encoder.encoder)
+model.config.output_attentions
+def remove_attention_query(layer_block_pairs:Tuple[int,int])->None:
+    for layer,block in layer_block_pairs:
+        model.encoder.encoder.layers[layer].blocks[block].attention.self.query = nn.Identity()
+def remove_attention_key(layer_block_pairs:Tuple[int,int])->None:
+    for layer,block in layer_block_pairs:
+        model.encoder.encoder.layers[layer].blocks[block].attention.self.key = nn.Identity()
+def remove_attention_value(layer_block_pairs:Tuple[int,int]):
+    for layer,block in layer_block_pairs:
+        model.encoder.encoder.layers[layer].blocks[block].attention.self.value = nn.Identity()
+
+layer_block_pairs_to_remove = [(3,0),(3,1)] #substitute (layer,block) pairs into this list
+
+remove_attention_query(layer_block_pairs_to_remove)
+remove_attention_key(layer_block_pairs_to_remove)
+remove_attention_value(layer_block_pairs_to_remove)
+
 device = "cuda" if torch.cuda.is_available() else "cpu"
 model.to(device)
 #print(model.encoder)
@@ -138,6 +96,7 @@ def softmax(scores:torch.Tensor):
 
 #seq = get_ids_from_tokens(outputs.scores)
 #res = processor.tokenizer.batch_decode(seq)
+prediction = softmax(outputs.scores)
 
 decoded_results = processor.tokenizer.batch_decode(outputs.sequences)
 sequence = processor.batch_decode(outputs.sequences)[0]
@@ -147,3 +106,9 @@ print("-------------------------------------------")
 print("output : ", processor.token2json(sequence))
 print("-------------------------------------------")
 
+criterion = BERT_COS_SIM(query=ans_label,sentence=sequence)
+loss = criterion.forward()
+print(f'similarity between two sentences : {loss[0][0]}')
+
+qkv_1_sim = [0.99364,0.990835,0.993644,0.993644,0.993644,0.993644,0.9967781,0.992087,0.992087,0.992087,0.993596,0.992087,0.992087,0.992087,0.992087,0.992087,0.992087,0.992087,0.8291517,0.992087]
+qkv_2_sim = [0.988687,0.927028,0.573661,0.987448,0.99008,0.993596,0.989411,0.99466,0.992087,0.815218]
