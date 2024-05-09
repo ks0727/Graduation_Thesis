@@ -9,6 +9,8 @@ from datasets import load_dataset
 import torch.nn as nn
 from typing import Any,Tuple
 from Loss import BERT_COS_SIM
+import os
+
 
 processor = DonutProcessor.from_pretrained("naver-clova-ix/donut-base")
 model = VisionEncoderDecoderModel.from_pretrained("naver-clova-ix/donut-base")
@@ -110,5 +112,27 @@ criterion = BERT_COS_SIM(query=ans_label,sentence=sequence)
 loss = criterion.forward()
 print(f'similarity between two sentences : {loss[0][0]}')
 
+
+path = './result/CrossAttentionMaps/QKV_Ablation'
 qkv_1_sim = [0.99364,0.990835,0.993644,0.993644,0.993644,0.993644,0.9967781,0.992087,0.992087,0.992087,0.993596,0.992087,0.992087,0.992087,0.992087,0.992087,0.992087,0.992087,0.8291517,0.992087]
+qkv_1_x = list(range(len(qkv_1_sim)))
+qkv_labels = ["(1,1)","(1,2)","(2,1)","(2,2)","(3,1)","(3,2)","(3,3)","(3,4)","(3,5)","(3,6)","(3,7)","(3,8)","(3,9)","(3,10)","(3,11)","(3,12)","(3,13)","(3,14)","(4,1)","(4,2)"]
+fig1 = plt.figure(figsize=(12,10))
+ax = fig1.add_subplot(1,1,1)
+ax.bar(qkv_1_x,qkv_1_sim,tick_label=qkv_labels)
+ax.set_xlabel("(layer,block) pairs removed")
+ax.set_ylabel("cosine similarity")
+ax.set_title("cosine similarities with removing one OKV matrix")
+fig1.savefig(os.path.join(path,'QKV_1_ablation'))
+
+
 qkv_2_sim = [0.988687,0.927028,0.573661,0.987448,0.99008,0.993596,0.989411,0.99466,0.992087,0.815218]
+qkv_2_x = list(range(len(qkv_2_sim)))
+qkv_2_labels = ["(1,1),(1,2)","(2,1),(2,2)","(3,1),(3,2)","(3,3),(3,4)","(3,5),(3,6)","(3,7),(3,8)","(3,9),(3,10)","(3,11),(3,12)","(3,13),(3,14)","(4,1),(4,2)",]
+fig2 = plt.figure(figsize=(12,10))
+ax = fig2.add_subplot(1,1,1)
+ax.bar(qkv_2_x,qkv_2_sim,tick_label=qkv_2_labels)
+ax.set_xlabel("(layer,block) pairs removed")
+ax.set_ylabel("cosine similarity")
+ax.set_title("cosine similarities with removing two OKV matrices")
+fig2.savefig(os.path.join(path,'QKV_2_ablation'))

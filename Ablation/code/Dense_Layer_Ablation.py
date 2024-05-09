@@ -10,6 +10,7 @@ import torch.nn as nn
 from typing import Any,Tuple
 from Loss import BERT_COS_SIM
 from Cross_Attention_Map import CrossAttentionMap
+import os
 
 processor = DonutProcessor.from_pretrained("naver-clova-ix/donut-base")
 model = VisionEncoderDecoderModel.from_pretrained("naver-clova-ix/donut-base")
@@ -20,7 +21,7 @@ def remove_dence_layer(layer_block_pairs:Tuple[int,int])->None:
     for layer,block in layer_block_pairs:
         model.encoder.encoder.layers[layer].blocks[block].attention.output.dense = nn.Identity()
 
-layer_block_pairs_to_remove = [(2,6),(2,7),(2,8),(2,9),(2,10)] #substitute (layer,block) pairs into this list
+layer_block_pairs_to_remove = [(3,0),(3,1)] #substitute (layer,block) pairs into this list
 remove_dence_layer(layer_block_pairs_to_remove)
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -84,11 +85,11 @@ def softmax(scores:torch.Tensor):
         y_pred[i] = e_x/ e_x.sum()
     return y_pred
 
-path = '../result/CrossAttentionMaps/After_Ablation'
+path = './result/CrossAttentionMaps/Dence_Layer_Ablation'
 cross_attns = outputs.cross_attentions
 
 cross_attn_map = CrossAttentionMap(cross_attns=cross_attns,path=path)
-cross_attn_map.get_cross_attn_maps()
+#cross_attn_map.get_cross_attn_maps()
 #seq = get_ids_from_tokens(outputs.scores)
 #res = processor.tokenizer.batch_decode(seq)
 
@@ -106,8 +107,62 @@ criterion = BERT_COS_SIM(query=ans_label,sentence=sequence)
 loss = criterion.forward()
 print(f'loss : {loss[0][0]}')
 
+
 dence_1_sims = [0.85889,0.98868,0.99364,0.99883,0.99208,0.99208,0.99208,0.99583,0.99208,0.99208,0.99208,0.99208,0.98941,0.99208,0.99606,0.99208,0.99208,0.99208,0.99208,0.99208]
-dence_2_sims = [0.98243,0.98875,0.99208,0.99677,0.99208,0.99298,0.98941,0.98434,0.98460]
+dence_1_x = list(range(len(dence_1_sims)))
+dence_1_labels = ["(1,1)","(1,2)","(2,1)","(2,2)","(3,1)","(3,2)","(3,3)","(3,4)","(3,5)","(3,6)","(3,7)","(3,8)","(3,9)","(3,10)","(3,11)","(3,12)","(3,13)","(3,14)","(4,1)","(4,2)"]
+fig1 = plt.figure(figsize=(12,10))
+ax = fig1.add_subplot(1,1,1)
+ax.bar(dence_1_x,dence_1_sims,tick_label=dence_1_labels)
+ax.set_xlabel("(layer,block) pairs removed")
+ax.set_ylabel("cosine similarity")
+ax.set_title("cosine similarities with removing one dence layer")
+fig1.savefig(os.path.join(path,'dence_1_ablation'))
+
+dence_2_sims = [0.98243,0.98875,0.99208,0.99677,0.99208,0.99298,0.98941,0.98434,0.98460,0.992087]
+dence_2_x = list(range(len(dence_2_sims)))
+dence_2_labels = ["(1,1),(1,2)","(2,1),(2,2)","(3,1),(3,2)","(3,3),(3,4)","(3,5),(3,6)","(3,7),(3,8)","(3,9),(3,10)","(3,11),(3,12)","(3,13),(3,14)","(4,1),(4,2)",]
+fig2 = plt.figure(figsize=(12,10))
+ax = fig2.add_subplot(1,1,1)
+ax.bar(dence_2_x,dence_2_sims,tick_label=dence_2_labels)
+ax.set_xlabel("(layer,block) pairs removed")
+ax.set_ylabel("cosine similarity")
+ax.set_title("cosine similarities with removing two dence layers")
+fig2.savefig(os.path.join(path,'dence_2_ablation'))
+
+
 dence_3_sims = [0.566753,0.565852,0.99672,0.99421,0.99542,0.96515,0.565852]
-dence_4_sims = [0.56039,0.97350,0.94285,0.96676,0.96333,0.95679]
+dence_3_x = list(range(len(dence_3_sims)))
+dence_3_labels = ["(1,1),(1,2),(2,1)","(2,2),(3,1),(3,2)","(3,3),(3,4),(3,5)","(3,6),(3,7),(3,8)","(3,9),(3,10),(3,11)","(3,12),(3,13),(3,14)","(3,14),(4,1),(4,2)"]
+fig3 = plt.figure(figsize=(12,10))
+ax = fig3.add_subplot(1,1,1)
+ax.bar(dence_3_x,dence_3_sims,tick_label=dence_3_labels)
+ax.set_xlabel("(layer,block) pairs removed")
+ax.set_ylabel("cosine similarity")
+ax.set_title("cosine similarities with removing three dence layers")
+fig3.savefig(os.path.join(path,'dence3_ablation'))
+
+
+
+dence_4_sims = [0.56039,0.94285,0.96676,0.96333,0.95679]
+dence_4_x = list(range(len(dence_4_sims)))
+dence_4_labels = ["(1,1),(1,2),(2,1),(2,2)","(3,1),(3,2),(3,3),(3,4)","(3,5),(3,6),(3,7),(3,8)","(3,9),(3,10),(3,11),(3,12)","(3,13),(3,14),(4,1),(4,2)",]
+fig4 = plt.figure(figsize=(12,10))
+ax = fig4.add_subplot(1,1,1)
+ax.bar(dence_4_x,dence_4_sims,tick_label=dence_4_labels)
+ax.set_xlabel("(layer,block) pairs removed")
+ax.set_ylabel("cosine similarity")
+ax.set_title("cosine similarities with removing four dence layers")
+fig4.savefig(os.path.join(path,'dence4_ablation'))
+
 dence_5_sims = [0.56039,0.91759,0.929557,0.70510]
+dence_5_x = list(range(len(dence_5_sims)))
+dence_5_labels = ["(1,1),(1,2),(2,1),(2,2),(3,1)","(3,2),(3,3),(3,4),(3,5),(3,6)","(3,7),(3,8),(3,9),(3,10),(3,11)","(3,12),(3,13),(3,14),(4,1),(4,2)"]
+fig5 = plt.figure(figsize=(12,10))
+ax = fig5.add_subplot(1,1,1)
+ax.bar(dence_5_x,dence_5_sims,tick_label=dence_5_labels)
+ax.set_xlabel("(layer,block) pairs removed")
+ax.set_ylim([0,1])
+ax.set_ylabel("cosine similarity")
+ax.set_title("cosine similarities with removing five dence layers")
+fig5.savefig(os.path.join(path,'dence5_ablation'))
