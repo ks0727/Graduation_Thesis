@@ -10,7 +10,8 @@ class CrossAttentionMap:
         self.cross_attns = cross_attns
         self.path = path
 
-    def get_cross_attn_maps(self,image=None,withImage=False):
+    def get_cross_attn_maps(self,image=None,withImage=False,output_sequence=None,processor=None):
+        output_sequence = output_sequence.to('cpu').detach().numpy().copy()
         for i in range(len(self.cross_attns)):
             cross_attn_ith_word = self.cross_attns[i][0]
             cross_attn_ith_word = cross_attn_ith_word.squeeze()
@@ -28,8 +29,12 @@ class CrossAttentionMap:
             if withImage:
                 assert image is not None , "please provide the image to show with"
                 ax.imshow(image,extent=[*xlim,*ylim],aspect='auto',alpha=0.8)
-            ax.set_title(f'{i+1}th word cross attention map <Dence_layer_Ablation>')
+            if output_sequence is None:
+                ax.set_title(f'{i+1}th word cross attention map <Dence_layer_Ablation>')
+            else:
+                word = processor.decode(output_sequence[i])
+                ax.set_title(f'{i+1}th word: "{word}" cross attention map <Dence_layer_Ablation>')
             fig.colorbar(mappable=None)
-            save_path = os.path.join(self.path,f'{i+1}th_word_DenceLayers_ablation_cross_attn_map')
+            save_path = os.path.join(self.path,f'{i+1}th_word_Before_Ablation_ablation_cross_attn_map')
             fig.savefig(save_path)
     

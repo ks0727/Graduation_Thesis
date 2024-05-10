@@ -7,6 +7,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from datasets import load_dataset
 from Cross_Attention_Map import CrossAttentionMap
+import os
 
 processor = DonutProcessor.from_pretrained("naver-clova-ix/donut-base")
 model = VisionEncoderDecoderModel.from_pretrained("naver-clova-ix/donut-base")
@@ -30,13 +31,14 @@ outputs = model.generate(
     bad_words_ids=[[processor.tokenizer.unk_token_id]],
     return_dict_in_generate=True,
 )
-path = '../result/CrossAttentionMaps/Before_Ablation'
+rpath = '../result/CrossAttentionMaps/Before_Ablation'
+path = os.path.join(os.path.dirname(__file__),rpath)
 
 cross_attns = outputs.cross_attentions
-
 cross_attn_map = CrossAttentionMap(cross_attns=cross_attns,path=path)
-cross_attn_map.get_cross_attn_maps()
+cross_attn_map.get_cross_attn_maps(processor=processor,output_sequence=outputs.sequences[0])
 #decoded_results = processor.tokenizer.decode(outputs.sequences)
+
 sequence = processor.batch_decode(outputs.sequences)[0]
 print(sequence)
 sequence = sequence.replace(processor.tokenizer.eos_token, "").replace(processor.tokenizer.pad_token, "")

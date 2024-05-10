@@ -14,6 +14,8 @@ import os
 
 processor = DonutProcessor.from_pretrained("naver-clova-ix/donut-base")
 model = VisionEncoderDecoderModel.from_pretrained("naver-clova-ix/donut-base")
+model.config.output_attentions = True
+
 
 def remove_layer_norm_before(layer_block_pairs:Tuple[int,int])->None:
     for layer,block in layer_block_pairs:
@@ -23,12 +25,11 @@ def remove_layer_norm_after(layer_block_pairs:Tuple[int,int])->None:
         model.encoder.encoder.layers[layer].blocks[block].layernorm_after = nn.Identity()
 
 layer_block_pairs_to_remove = [(3,1)] #substitute (layer,block) pairs into this list
-#remove_layer_norm_before(layer_block_pairs_to_remove)
+remove_layer_norm_before(layer_block_pairs_to_remove)
 remove_layer_norm_after(layer_block_pairs_to_remove)
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 model.to(device)
-#print(model.encoder)
 dataset = load_dataset("hf-internal-testing/example-documents", split="test")
 image = dataset[0]["image"]
 task_prompt = "<s_iitcdip>"
@@ -47,6 +48,7 @@ ans_label = "11:14 to 11:39 a.m. Coffee Break Coffee will be served for men and 
 "Exhibits Open Capt. Jack Stoney Room 2:00 to 5:00 p.m. TRRF Scientific Advisory Council Meeting Ballroom Foyer"
 label_ids = processor.tokenizer(ans_label,add_special_tokens = False,return_tensors="pt").input_ids[0]
 label_ids = label_ids.to('cpu').detach().numpy().copy()
+print(label_ids)
 outputs = model.generate(
     pixel_values.to(device),
     decoder_input_ids=decoder_input_ids.to(device),
@@ -87,20 +89,25 @@ def softmax(scores:torch.Tensor):
     return y_pred
 
 
-path = './result/CrossAttentionMaps/LN_Both_Ablation'
-cross_attns = outputs.cross_attentions
-
-#cross_attn_map = CrossAttentionMap(cross_attns=cross_attns,path=path)
-#cross_attn_map.get_cross_attn_maps()
-prediction = softmax(outputs.scores)
 
 decoded_results = processor.tokenizer.batch_decode(outputs.sequences)
+print(len(decoded_results))
+exit()
 sequence = processor.batch_decode(outputs.sequences)[0]
 sequence = sequence.replace(processor.tokenizer.eos_token, "").replace(processor.tokenizer.pad_token, "")
 sequence = re.sub(r"<.*?>", "", sequence, count=1).strip()  # remove first task start token
 print("-------------------------------------------")
 print("output : ", processor.token2json(sequence))
 print("-------------------------------------------")
+
+
+path = './result/CrossAttentionMaps/LN_Both_Ablation'
+cross_attns = outputs.cross_attentions
+
+cross_attn_map = CrossAttentionMap(cross_attns=cross_attns,path=path)
+cross_attn_map.get_cross_attn_maps(sentence=sequence)
+prediction = softmax(outputs.scores)
+
 
 criterion = BERT_COS_SIM(query=ans_label,sentence=sequence)
 loss = criterion.forward()
@@ -129,7 +136,7 @@ ln_labels = ["(1,1)","(1,2)","(2,1)","(2,2)","(3,1)","(3,2)","(3,3)","(3,4)","(3
 
 
 
-
+exit()
 
 ln_both_sims = [0.945670,0.637312,0.990499,0.653348,0.403636,0.551515,0.480766,0.945670,0.585094,0.585094,0.409299,0.495281,0.683659,0.683659,0.570819,0.370292,0.68365,0.68365,0.540240,0.498782]
 ln_both_x = list(range(len(ln_both_sims)))
