@@ -34,10 +34,12 @@ outputs = model.generate(
 rpath = '../result/CrossAttentionMaps/Before_Ablation'
 path = os.path.join(os.path.dirname(__file__),rpath)
 
+
+this_file_name = os.path.basename(__file__)
+this_file_name,_ = os.path.splitext(this_file_name)
 cross_attns = outputs.cross_attentions
 cross_attn_map = CrossAttentionMap(cross_attns=cross_attns,path=path)
-cross_attn_map.get_cross_attn_maps(processor=processor,output_sequence=outputs.sequences[0])
-#decoded_results = processor.tokenizer.decode(outputs.sequences)
+cross_attn_map.get_cross_attn_maps(name=this_file_name,processor=processor,output_sequence=outputs.sequences[0])
 
 sequence = processor.batch_decode(outputs.sequences)[0]
 print(sequence)

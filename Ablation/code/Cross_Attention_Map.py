@@ -10,7 +10,9 @@ class CrossAttentionMap:
         self.cross_attns = cross_attns
         self.path = path
 
-    def get_cross_attn_maps(self,image=None,withImage=False,output_sequence=None,processor=None):
+    def get_cross_attn_maps(self,name=None,image=None,withImage=False,output_sequence=None,processor=None):
+        if name is None:
+            raise ValueError("Please provide the name")
         output_sequence = output_sequence.to('cpu').detach().numpy().copy()
         for i in range(len(self.cross_attns)):
             cross_attn_ith_word = self.cross_attns[i][0]
@@ -30,11 +32,11 @@ class CrossAttentionMap:
                 assert image is not None , "please provide the image to show with"
                 ax.imshow(image,extent=[*xlim,*ylim],aspect='auto',alpha=0.8)
             if output_sequence is None:
-                ax.set_title(f'{i+1}th word cross attention map <Dence_layer_Ablation>')
+                ax.set_title(f'{i+1}th word cross attention map <{name}>')
             else:
                 word = processor.decode(output_sequence[i])
-                ax.set_title(f'{i+1}th word: "{word}" cross attention map <Dence_layer_Ablation>')
+                ax.set_title(f'{i+1}th word: "{word}" cross attention map <{name}>')
             fig.colorbar(mappable=None)
-            save_path = os.path.join(self.path,f'{i+1}th_word_Before_Ablation_ablation_cross_attn_map')
+            save_path = os.path.join(self.path,f'{i+1}th_word_{name}_cross_attn_map')
             fig.savefig(save_path)
     

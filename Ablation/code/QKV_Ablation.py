@@ -10,12 +10,13 @@ import torch.nn as nn
 from typing import Any,Tuple
 from Loss import BERT_COS_SIM
 import os
-
+from Cross_Attention_Map import CrossAttentionMap
 
 processor = DonutProcessor.from_pretrained("naver-clova-ix/donut-base")
 model = VisionEncoderDecoderModel.from_pretrained("naver-clova-ix/donut-base")
+model.config.output_attentions = True
 model.encoder.config.output_scores = True
-model.config.output_attentions
+
 def remove_attention_query(layer_block_pairs:Tuple[int,int])->None:
     for layer,block in layer_block_pairs:
         model.encoder.encoder.layers[layer].blocks[block].attention.self.query = nn.Identity()
@@ -26,7 +27,7 @@ def remove_attention_value(layer_block_pairs:Tuple[int,int]):
     for layer,block in layer_block_pairs:
         model.encoder.encoder.layers[layer].blocks[block].attention.self.value = nn.Identity()
 
-layer_block_pairs_to_remove = [(3,0),(3,1)] #substitute (layer,block) pairs into this list
+layer_block_pairs_to_remove = [(3,0)] #substitute (layer,block) pairs into this list
 
 remove_attention_query(layer_block_pairs_to_remove)
 remove_attention_key(layer_block_pairs_to_remove)
@@ -92,12 +93,7 @@ def softmax(scores:torch.Tensor):
         y_pred[i] = e_x/ e_x.sum()
     return y_pred
 
-#prediction = softmax(outputs.scores)
-#loss = cross_entropy_loss(label_ids,prediction)
-#print(f'loss : {loss}')
 
-#seq = get_ids_from_tokens(outputs.scores)
-#res = processor.tokenizer.batch_decode(seq)
 prediction = softmax(outputs.scores)
 
 decoded_results = processor.tokenizer.batch_decode(outputs.sequences)
@@ -113,7 +109,15 @@ loss = criterion.forward()
 print(f'similarity between two sentences : {loss[0][0]}')
 
 
-path = './result/CrossAttentionMaps/QKV_Ablation'
+rpath = '../result/CrossAttentionMaps/QKV_Ablation'
+path = os.path.join(os.path.dirname(__file__),rpath)
+this_file_name = os.path.basename(__file__)
+this_file_name,_ = os.path.splitext(this_file_name)
+
+cross_attns = outputs.cross_attentions
+cross_attn_map = CrossAttentionMap(cross_attns=cross_attns,path=path)
+cross_attn_map.get_cross_attn_maps(name=this_file_name,processor=processor,output_sequence=outputs.sequences[0])
+
 qkv_1_sim = [0.99364,0.990835,0.993644,0.993644,0.993644,0.993644,0.9967781,0.992087,0.992087,0.992087,0.993596,0.992087,0.992087,0.992087,0.992087,0.992087,0.992087,0.992087,0.8291517,0.992087]
 qkv_1_x = list(range(len(qkv_1_sim)))
 qkv_labels = ["(1,1)","(1,2)","(2,1)","(2,2)","(3,1)","(3,2)","(3,3)","(3,4)","(3,5)","(3,6)","(3,7)","(3,8)","(3,9)","(3,10)","(3,11)","(3,12)","(3,13)","(3,14)","(4,1)","(4,2)"]
