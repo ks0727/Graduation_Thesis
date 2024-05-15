@@ -29,10 +29,11 @@ outputs = model.generate(
 )
 
 encoder_last_hidden = outputs.encoder_hidden_states
-print(encoder_last_hidden[4].size())
+#print(encoder_last_hidden[4].size())
 
 decoded_results = processor.tokenizer.batch_decode(outputs.sequences)
 sequence = processor.batch_decode(outputs.sequences)[0]
+print(sequence)
 sequence = sequence.replace(processor.tokenizer.eos_token, "").replace(processor.tokenizer.pad_token, "")
 sequence = re.sub(r"<.*?>", "", sequence, count=1).strip()  # remove first task start token
 output = processor.token2json(sequence)

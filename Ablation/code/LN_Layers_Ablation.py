@@ -26,7 +26,7 @@ def remove_layer_norm_after(layer_block_pairs:Tuple[int,int])->None:
 
 layer_block_pairs_to_remove = [(3,0)] #substitute (layer,block) pairs into this list
 remove_layer_norm_before(layer_block_pairs_to_remove)
-#remove_layer_norm_after(layer_block_pairs_to_remove)
+remove_layer_norm_after(layer_block_pairs_to_remove)
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 model.to(device)
@@ -98,7 +98,7 @@ sequence = re.sub(r"<.*?>", "", sequence, count=1).strip()  # remove first task 
 print("-------------------------------------------")
 print("output : ", processor.token2json(sequence))
 print("-------------------------------------------")
-
+exit()
 cross_attns = outputs.cross_attentions
 rpath = '../result/CrossAttentionMaps/LN_Before_Ablation'
 path = os.path.join(os.path.dirname(__file__),rpath)

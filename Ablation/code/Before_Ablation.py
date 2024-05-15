@@ -14,13 +14,18 @@ model = VisionEncoderDecoderModel.from_pretrained("naver-clova-ix/donut-base")
 device = "cuda" if torch.cuda.is_available() else "cpu"
 model.to(device)
 model.config.output_attentions = True
-
+#print(model.encoder)
 dataset = load_dataset("hf-internal-testing/example-documents", split="test")
 image = dataset[0]["image"]
 task_prompt = "<s_iitcdip>"
 decoder_input_ids = processor.tokenizer(task_prompt, add_special_tokens=False, return_tensors="pt").input_ids
 pixel_values = processor(image, return_tensors="pt").pixel_values
+pixel_img = pixel_values.squeeze()
+pixel_img = pixel_img.permute(1,2,0)
+pixel_img = pixel_img*0.5+0.5
 
+plt.imshow(pixel_img)
+plt.show()
 outputs = model.generate(
     pixel_values.to(device),
     decoder_input_ids=decoder_input_ids.to(device),
@@ -34,13 +39,13 @@ outputs = model.generate(
 rpath = '../result/CrossAttentionMaps/Before_Ablation'
 path = os.path.join(os.path.dirname(__file__),rpath)
 
-
+"""
 this_file_name = os.path.basename(__file__)
 this_file_name,_ = os.path.splitext(this_file_name)
 cross_attns = outputs.cross_attentions
 cross_attn_map = CrossAttentionMap(cross_attns=cross_attns,path=path)
 cross_attn_map.get_cross_attn_maps(name=this_file_name,processor=processor,output_sequence=outputs.sequences[0])
-
+"""
 sequence = processor.batch_decode(outputs.sequences)[0]
 print(sequence)
 sequence = sequence.replace(processor.tokenizer.eos_token, "").replace(processor.tokenizer.pad_token, "")

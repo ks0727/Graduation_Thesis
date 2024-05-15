@@ -103,7 +103,7 @@ sequence = re.sub(r"<.*?>", "", sequence, count=1).strip()  # remove first task 
 print("-------------------------------------------")
 print("output : ", processor.token2json(sequence))
 print("-------------------------------------------")
-
+exit()
 criterion = BERT_COS_SIM(query=ans_label,sentence=sequence)
 loss = criterion.forward()
 print(f'similarity between two sentences : {loss[0][0]}')

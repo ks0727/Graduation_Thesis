@@ -21,7 +21,7 @@ def remove_dence_layer(layer_block_pairs:Tuple[int,int])->None:
     for layer,block in layer_block_pairs:
         model.encoder.encoder.layers[layer].blocks[block].attention.output.dense = nn.Identity()
 
-layer_block_pairs_to_remove = [(2,0),(2,1),(2,3),(2,4)] #substitute (layer,block) pairs into this list
+layer_block_pairs_to_remove = [(2,11),(2,12),(2,13)] #substitute (layer,block) pairs into this list
 remove_dence_layer(layer_block_pairs_to_remove)
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -93,7 +93,7 @@ this_file_name = os.path.basename(__file__)
 this_file_name,_ = os.path.splitext(this_file_name)
 cross_attn_map = CrossAttentionMap(cross_attns=cross_attns,path=path)
 cross_attn_map.get_cross_attn_maps(name=this_file_name,output_sequence=outputs.sequences[0],processor=processor)
-
+"""
 decoded_results = processor.tokenizer.batch_decode(outputs.sequences)
 sequence = processor.batch_decode(outputs.sequences)[0]
 sequence = sequence.replace(processor.tokenizer.eos_token, "").replace(processor.tokenizer.pad_token, "")
@@ -108,7 +108,7 @@ criterion = BERT_COS_SIM(query=ans_label,sentence=sequence)
 loss = criterion.forward()
 print(f'loss : {loss[0][0]}')
 
-"""
+exit()
 dence_1_sims = [0.85889,0.98868,0.99364,0.99883,0.99208,0.99208,0.99208,0.99583,0.99208,0.99208,0.99208,0.99208,0.98941,0.99208,0.99606,0.99208,0.99208,0.99208,0.99208,0.99208]
 dence_1_x = list(range(len(dence_1_sims)))
 dence_1_labels = ["(1,1)","(1,2)","(2,1)","(2,2)","(3,1)","(3,2)","(3,3)","(3,4)","(3,5)","(3,6)","(3,7)","(3,8)","(3,9)","(3,10)","(3,11)","(3,12)","(3,13)","(3,14)","(4,1)","(4,2)"]
