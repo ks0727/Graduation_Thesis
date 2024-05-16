@@ -158,5 +158,5 @@ if __name__ == '__main__':
                         help='dimensions to get triggered examples')
     args = parser.parse_args()
 
-    #dim = main(args)
-    visualize_extracted_patches(args,38)
+    dim = main(args)
+    visualize_extracted_patches(args,dim)

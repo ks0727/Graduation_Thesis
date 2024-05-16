@@ -14,7 +14,8 @@ model = VisionEncoderDecoderModel.from_pretrained("naver-clova-ix/donut-base")
 device = "cuda" if torch.cuda.is_available() else "cpu"
 model.to(device)
 model.config.output_attentions = True
-#print(model.encoder)
+print(model)
+exit()
 dataset = load_dataset("hf-internal-testing/example-documents", split="test")
 image = dataset[0]["image"]
 task_prompt = "<s_iitcdip>"
