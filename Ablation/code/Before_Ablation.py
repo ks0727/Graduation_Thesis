@@ -14,8 +14,8 @@ model = VisionEncoderDecoderModel.from_pretrained("naver-clova-ix/donut-base")
 device = "cuda" if torch.cuda.is_available() else "cpu"
 model.to(device)
 model.config.output_attentions = True
-print(model)
-exit()
+model.config.output_hidden_states = True
+
 dataset = load_dataset("hf-internal-testing/example-documents", split="test")
 image = dataset[0]["image"]
 task_prompt = "<s_iitcdip>"
@@ -25,8 +25,27 @@ pixel_img = pixel_values.squeeze()
 pixel_img = pixel_img.permute(1,2,0)
 pixel_img = pixel_img*0.5+0.5
 
-plt.imshow(pixel_img)
-plt.show()
+#print(model.encoder)
+class SaveOutput:
+    def __init__(self,model,target_layer) -> None:
+        self.model = model
+        self.layer_output = []
+        self.feature_hundle = target_layer.register_forward_hook(self.feature)
+    
+    def feature(self,model,input,output):
+        activation = output[0]
+        self.layer_output.append(activation.detach())
+    
+    def release(self):
+        self.feature_hundle.remove()
+
+encoder = model.encoder
+encoder.config.output_hidden_states = True
+save = SaveOutput(encoder,encoder.encoder.layers[3].blocks[1])
+output = encoder(pixel_values.to(device))
+print(save.layer_output[0].size())
+
+exit()
 outputs = model.generate(
     pixel_values.to(device),
     decoder_input_ids=decoder_input_ids.to(device),
@@ -36,10 +55,14 @@ outputs = model.generate(
     use_cache=True,
     bad_words_ids=[[processor.tokenizer.unk_token_id]],
     return_dict_in_generate=True,
+    output_hidden_states=True,
 )
+
 rpath = '../result/CrossAttentionMaps/Before_Ablation'
 path = os.path.join(os.path.dirname(__file__),rpath)
-
+last = outputs.encoder_hidden_states[4]
+print(last)
+exit()
 """
 this_file_name = os.path.basename(__file__)
 this_file_name,_ = os.path.splitext(this_file_name)
