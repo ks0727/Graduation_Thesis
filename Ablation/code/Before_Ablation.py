@@ -25,27 +25,14 @@ pixel_img = pixel_values.squeeze()
 pixel_img = pixel_img.permute(1,2,0)
 pixel_img = pixel_img*0.5+0.5
 
-#print(model.encoder)
-class SaveOutput:
-    def __init__(self,model,target_layer) -> None:
-        self.model = model
-        self.layer_output = []
-        self.feature_hundle = target_layer.register_forward_hook(self.feature)
-    
-    def feature(self,model,input,output):
-        activation = output[0]
-        self.layer_output.append(activation.detach())
-    
-    def release(self):
-        self.feature_hundle.remove()
-
+save = []
+def hook(module,input,output):
+    save.append(output.detach())
+exit()
 encoder = model.encoder
 encoder.config.output_hidden_states = True
-save = SaveOutput(encoder,encoder.encoder.layers[3].blocks[1])
+encoder.encoder.layers[0].blocks[0].intermediate.register_forward_hook(hook)
 output = encoder(pixel_values.to(device))
-print(save.layer_output[0].size())
-
-exit()
 outputs = model.generate(
     pixel_values.to(device),
     decoder_input_ids=decoder_input_ids.to(device),

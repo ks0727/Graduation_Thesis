@@ -17,6 +17,13 @@ def to_np(x:torch.Tensor):
     x = x.to('cpu').detach().numpy().copy()
     return x
 
+def print_memory_usage():
+    allocated_memory = torch.cuda.memory_allocated() / (1024 ** 3)
+    reserved_memory = torch.cuda.memory_reserved() / (1024 ** 3)
+    print(f"Allocated Memory: {allocated_memory:.2f} GB")
+    print(f"Reserved Memory: {reserved_memory:.2f} GB")
+
+
 def main(args)->int:
     model_path,dataset_path = args.pretrained_model_path, args.dataset_path
     processor = DonutProcessor.from_pretrained(model_path)
@@ -25,49 +32,46 @@ def main(args)->int:
     model.config.output_hidden_states = True #changed the config to output the hidden states
     model.to(device)
     model.eval()
+    
     task_prompt = "<s_iitcdip>"
-
+    print(model.encoder)
     dataset = load_dataset(dataset_path, split="train")
 
     top_k_data = [] #the list to have the information (similarity,dataset_index,patch_index)
     dims_for_analysis = args.dims_for_analysis
     max_dim = 512*2**(args.stage_for_analysis) #max dimension of the key to analyze
+    save = []
+    def hook(model,input,output):
+        # print(output.is_cuda)
+        # print(output.shape)
+        # save.append(output.detach())
+        # save.append(output.to('cpu'))
+        save.append(output.data.cpu())
     
+    encoder = model.encoder
+    encoder.config.output_hidden_states = True
+    encoder.encoder.layers[args.stage_for_analysis].blocks[args.block_for_analysis].intermediate.register_forward_hook(hook)
+
     if dims_for_analysis is None:
         dims_for_analysis = random.randint(0,max_dim-1) #decide the dimension of the weight to analyze if it was not specified
     
     assert dims_for_analysis is not None
-
+    
     for idx in tqdm(range(args.max_images)):
-        image = dataset[idx]["image"]
-        decoder_input_ids = processor.tokenizer(task_prompt, add_special_tokens=False, return_tensors="pt").input_ids
-        pixel_values = processor(image, return_tensors="pt").pixel_values
-        outputs = model.generate(
-            pixel_values.to(device),
-            decoder_input_ids=decoder_input_ids.to(device),
-            max_length=model.decoder.config.max_position_embeddings,
-            pad_token_id=processor.tokenizer.pad_token_id,
-            eos_token_id=processor.tokenizer.eos_token_id,
-            use_cache=True,
-            bad_words_ids=[[processor.tokenizer.unk_token_id]],
-            return_dict_in_generate=True,
-        )
+        with torch.no_grad():
+            image = dataset[idx]["image"]
+            pixel_values = processor(image, return_tensors="pt").pixel_values
+            _ = model.encoder(pixel_values.to(device))
+            calculated_sim = save[-1]
+            calculated_sim = calculated_sim.squeeze()[:,dims_for_analysis]
+            calculated_sim = to_np(calculated_sim)
+            sorted_idx = np.argsort(-calculated_sim)
+            sorted_idx = sorted_idx[:args.top_k]
+            for i in range(args.top_k):
+                top_k_data.append((calculated_sim[sorted_idx[i]],idx,sorted_idx[i]))
+            top_k_data = sorted(top_k_data,reverse=True)[:args.top_k]
+            save.pop(-1)
 
-        embedded_tokens = outputs.encoder_hidden_states[args.stage_for_analysis]
-        embedded_tokens = embedded_tokens.squeeze()
-        
-        W_key = model.encoder.encoder.layers[args.stage_for_analysis].blocks[args.block_for_analysis].intermediate.dense.weight[dims_for_analysis]
-        calculated_sim = embedded_tokens@W_key
-        #m = nn.GELU()
-        #calculated_sim = m(calculated_sim)
-        calculated_sim = to_np(calculated_sim)
-        sorted_idx = np.argsort(-calculated_sim)
-        sorted_idx = sorted_idx[:args.top_k]
-        
-        for i in range(args.top_k):
-            top_k_data.append((calculated_sim[sorted_idx[i]],idx,sorted_idx[i]))
-        top_k_data = sorted(top_k_data,reverse=True)[:args.top_k]
-        
     result_path = os.path.join(args.result_path,f"{args.max_images}_images_{args.stage_for_analysis}_stage_{args.block_for_analysis}_block_{dims_for_analysis}_dim_{args.top_k}_top")
     if not os.path.isdir(result_path):
         os.makedirs(result_path)
@@ -90,7 +94,6 @@ def main(args)->int:
                 dict_top_k[str(i+1)] = {"rank":str(i+1),"similarity":str(similarity),"data_index":str(data_idx),"patch_index":str(patch_idx)}
         with open(json_path,"w") as f:
             json.dump(dict_top_k,f,indent=2)
-        
     except:
         with open("result.txt","w") as f:
             for i in range(args.top_k):
