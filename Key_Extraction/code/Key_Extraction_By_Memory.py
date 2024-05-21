@@ -34,7 +34,6 @@ def main(args)->int:
     model.eval()
     
     task_prompt = "<s_iitcdip>"
-    print(model.encoder)
     dataset = load_dataset(dataset_path, split="train")
 
     top_k_data = [] #the list to have the information (similarity,dataset_index,patch_index)
