@@ -1,52 +1,52 @@
 result of the word : a
 size : 10px , result (if succeeded?) : False, output :  
-size : 20px , result (if succeeded?) : False, output : e 
-size : 30px , result (if succeeded?) : False, output : e 
-size : 40px , result (if succeeded?) : False, output : e 
-size : 50px , result (if succeeded?) : False, output : e e 
+size : 20px , result (if succeeded?) : True, output : a 
+size : 30px , result (if succeeded?) : True, output : a 
+size : 40px , result (if succeeded?) : True, output : a 
+size : 50px , result (if succeeded?) : True, output : a 
 size : 60px , result (if succeeded?) : True, output : a 
 size : 70px , result (if succeeded?) : True, output : a 
 size : 80px , result (if succeeded?) : True, output : a 
 size : 90px , result (if succeeded?) : True, output : a 
-size : 100px , result (if succeeded?) : False, output : e 
+size : 100px , result (if succeeded?) : True, output : a 
 size : 110px , result (if succeeded?) : True, output : a 
 size : 120px , result (if succeeded?) : True, output : a 
 size : 130px , result (if succeeded?) : True, output : a 
-size : 140px , result (if succeeded?) : False, output : e 
+size : 140px , result (if succeeded?) : True, output : a 
 size : 150px , result (if succeeded?) : True, output : a 
-size : 160px , result (if succeeded?) : False, output : e 
-size : 170px , result (if succeeded?) : False, output : e 
-size : 180px , result (if succeeded?) : False, output : e 
-size : 190px , result (if succeeded?) : False, output : e 
-size : 200px , result (if succeeded?) : False, output : e 
-size : 210px , result (if succeeded?) : False, output : e 
-size : 220px , result (if succeeded?) : False, output : e 
-size : 230px , result (if succeeded?) : False, output : e 
-size : 240px , result (if succeeded?) : False, output : e 
-size : 250px , result (if succeeded?) : False, output : e 
-size : 260px , result (if succeeded?) : False, output : e 
-size : 270px , result (if succeeded?) : False, output : e 
-size : 280px , result (if succeeded?) : False, output : e 
-size : 290px , result (if succeeded?) : False, output : e 
-size : 300px , result (if succeeded?) : False, output : e 
-size : 310px , result (if succeeded?) : False, output :  
-size : 320px , result (if succeeded?) : False, output :  
-size : 330px , result (if succeeded?) : False, output :  
-size : 340px , result (if succeeded?) : False, output :  
-size : 350px , result (if succeeded?) : False, output :  
-size : 360px , result (if succeeded?) : False, output :  
-size : 370px , result (if succeeded?) : False, output :  
-size : 380px , result (if succeeded?) : False, output :  
-size : 390px , result (if succeeded?) : False, output :  
-size : 400px , result (if succeeded?) : False, output :  
-size : 410px , result (if succeeded?) : False, output :  
-size : 420px , result (if succeeded?) : False, output :  
-size : 430px , result (if succeeded?) : False, output :  
-size : 440px , result (if succeeded?) : False, output :  
-size : 450px , result (if succeeded?) : False, output :  
+size : 160px , result (if succeeded?) : True, output : a 
+size : 170px , result (if succeeded?) : True, output : a 
+size : 180px , result (if succeeded?) : True, output : a 
+size : 190px , result (if succeeded?) : True, output : a 
+size : 200px , result (if succeeded?) : True, output : a 
+size : 210px , result (if succeeded?) : True, output : a 
+size : 220px , result (if succeeded?) : True, output : a 
+size : 230px , result (if succeeded?) : True, output : a 
+size : 240px , result (if succeeded?) : True, output : a 
+size : 250px , result (if succeeded?) : True, output : a 
+size : 260px , result (if succeeded?) : True, output : a 
+size : 270px , result (if succeeded?) : True, output : a 
+size : 280px , result (if succeeded?) : True, output : a 
+size : 290px , result (if succeeded?) : True, output : a 
+size : 300px , result (if succeeded?) : True, output : a 
+size : 310px , result (if succeeded?) : True, output : a 
+size : 320px , result (if succeeded?) : True, output : a 
+size : 330px , result (if succeeded?) : True, output : a 
+size : 340px , result (if succeeded?) : True, output : a 
+size : 350px , result (if succeeded?) : True, output : a 
+size : 360px , result (if succeeded?) : True, output : a 
+size : 370px , result (if succeeded?) : True, output : a 
+size : 380px , result (if succeeded?) : True, output : a 
+size : 390px , result (if succeeded?) : True, output : a 
+size : 400px , result (if succeeded?) : True, output : a 
+size : 410px , result (if succeeded?) : True, output : a 
+size : 420px , result (if succeeded?) : True, output : a 
+size : 430px , result (if succeeded?) : True, output : a 
+size : 440px , result (if succeeded?) : True, output : a 
+size : 450px , result (if succeeded?) : True, output : a 
 size : 460px , result (if succeeded?) : False, output :  
-size : 470px , result (if succeeded?) : False, output :  
-size : 480px , result (if succeeded?) : False, output :  
+size : 470px , result (if succeeded?) : True, output : a 
+size : 480px , result (if succeeded?) : True, output : a 
 size : 490px , result (if succeeded?) : False, output :  
 size : 500px , result (if succeeded?) : False, output :  
 size : 510px , result (if succeeded?) : False, output :  
@@ -98,3 +98,5 @@ size : 960px , result (if succeeded?) : False, output :
 size : 970px , result (if succeeded?) : False, output :  
 size : 980px , result (if succeeded?) : False, output :  
 size : 990px , result (if succeeded?) : False, output :  
+size : 1000px , result (if succeeded?) : False, output :  
+total iteration : 100 , succeed : 46

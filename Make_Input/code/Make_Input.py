@@ -7,19 +7,19 @@ import random
 text : texts to draw in the image
 font_size : font size[px] used for texts
 font : which kinds of font to use
-image_size : size of the output image
+image_size : (width, height) size of the output image default : (1920,2560)
 text_color : (r,g,b) value of the text
 bg_color : (r,g,b) value of the back ground of the image
-test_pos: left top position of the text
+test_pos:  (x,y) left top position of the text
 """
 class Make_input:
     def __init__(self,text:str='A',
                 font_size:int=50,
                 font:str='/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc',
-                image_size:Tuple[int,int]=(2560,1920),
+                image_size:Tuple[int,int]=(1920,2560),
                 text_color:Tuple[int,int,int]=(0,0,0),
                 bg_color:Tuple[int,int,int]=(255,255,255),
-                text_pos:Tuple[int,int]=(1000,200)) -> None:
+                text_pos:Tuple[int,int]=(100,500)) -> None:
         self.text = text
         self.font_size = font_size
         self.font = font

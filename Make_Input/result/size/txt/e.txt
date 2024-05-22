@@ -1,201 +1,102 @@
 result of the word : e
 size : 10px , result (if succeeded?) : False, output :  
-total iteration : 1 , succeed : 0
-size : 20px , result (if succeeded?) : False, output :  
-total iteration : 2 , succeed : 0
-size : 30px , result (if succeeded?) : False, output : D 
-total iteration : 3 , succeed : 0
+size : 20px , result (if succeeded?) : True, output : e 
+size : 30px , result (if succeeded?) : True, output : e 
 size : 40px , result (if succeeded?) : True, output : e 
-total iteration : 4 , succeed : 1
 size : 50px , result (if succeeded?) : True, output : e 
-total iteration : 5 , succeed : 2
 size : 60px , result (if succeeded?) : True, output : e 
-total iteration : 6 , succeed : 3
 size : 70px , result (if succeeded?) : True, output : e 
-total iteration : 7 , succeed : 4
 size : 80px , result (if succeeded?) : True, output : e 
-total iteration : 8 , succeed : 5
 size : 90px , result (if succeeded?) : True, output : e 
-total iteration : 9 , succeed : 6
 size : 100px , result (if succeeded?) : True, output : e 
-total iteration : 10 , succeed : 7
 size : 110px , result (if succeeded?) : True, output : e 
-total iteration : 11 , succeed : 8
 size : 120px , result (if succeeded?) : True, output : e 
-total iteration : 12 , succeed : 9
 size : 130px , result (if succeeded?) : True, output : e 
-total iteration : 13 , succeed : 10
 size : 140px , result (if succeeded?) : True, output : e 
-total iteration : 14 , succeed : 11
 size : 150px , result (if succeeded?) : True, output : e 
-total iteration : 15 , succeed : 12
 size : 160px , result (if succeeded?) : True, output : e 
-total iteration : 16 , succeed : 13
 size : 170px , result (if succeeded?) : True, output : e 
-total iteration : 17 , succeed : 14
 size : 180px , result (if succeeded?) : True, output : e 
-total iteration : 18 , succeed : 15
 size : 190px , result (if succeeded?) : True, output : e 
-total iteration : 19 , succeed : 16
 size : 200px , result (if succeeded?) : True, output : e 
-total iteration : 20 , succeed : 17
-size : 210px , result (if succeeded?) : False, output : C 
-total iteration : 21 , succeed : 17
-size : 220px , result (if succeeded?) : False, output : D 
-total iteration : 22 , succeed : 17
+size : 210px , result (if succeeded?) : True, output : e 
+size : 220px , result (if succeeded?) : True, output : e 
 size : 230px , result (if succeeded?) : True, output : e 
-total iteration : 23 , succeed : 18
 size : 240px , result (if succeeded?) : True, output : e 
-total iteration : 24 , succeed : 19
-size : 250px , result (if succeeded?) : False, output : D 
-total iteration : 25 , succeed : 19
-size : 260px , result (if succeeded?) : False, output : D 
-total iteration : 26 , succeed : 19
+size : 250px , result (if succeeded?) : True, output : e 
+size : 260px , result (if succeeded?) : True, output : e 
 size : 270px , result (if succeeded?) : True, output : e 
-total iteration : 27 , succeed : 20
-size : 280px , result (if succeeded?) : False, output : D 
-total iteration : 28 , succeed : 20
-size : 290px , result (if succeeded?) : False, output : D 
-total iteration : 29 , succeed : 20
-size : 300px , result (if succeeded?) : False, output : D 
-total iteration : 30 , succeed : 20
-size : 310px , result (if succeeded?) : False, output : D 
-total iteration : 31 , succeed : 20
-size : 320px , result (if succeeded?) : False, output : D 
-total iteration : 32 , succeed : 20
-size : 330px , result (if succeeded?) : False, output : D 
-total iteration : 33 , succeed : 20
-size : 340px , result (if succeeded?) : False, output : D 
-total iteration : 34 , succeed : 20
-size : 350px , result (if succeeded?) : False, output : D 
-total iteration : 35 , succeed : 20
-size : 360px , result (if succeeded?) : False, output : D 
-total iteration : 36 , succeed : 20
-size : 370px , result (if succeeded?) : False, output :  
-total iteration : 37 , succeed : 20
-size : 380px , result (if succeeded?) : False, output :  
-total iteration : 38 , succeed : 20
-size : 390px , result (if succeeded?) : False, output :  
-total iteration : 39 , succeed : 20
-size : 400px , result (if succeeded?) : False, output : D 
-total iteration : 40 , succeed : 20
-size : 410px , result (if succeeded?) : False, output :  
-total iteration : 41 , succeed : 20
-size : 420px , result (if succeeded?) : False, output : D 
-total iteration : 42 , succeed : 20
-size : 430px , result (if succeeded?) : False, output : D 
-total iteration : 43 , succeed : 20
-size : 440px , result (if succeeded?) : False, output : D 
-total iteration : 44 , succeed : 20
-size : 450px , result (if succeeded?) : False, output : D 
-total iteration : 45 , succeed : 20
-size : 460px , result (if succeeded?) : False, output :  
-total iteration : 46 , succeed : 20
-size : 470px , result (if succeeded?) : False, output :  
-total iteration : 47 , succeed : 20
-size : 480px , result (if succeeded?) : False, output :  
-total iteration : 48 , succeed : 20
-size : 490px , result (if succeeded?) : False, output :  
-total iteration : 49 , succeed : 20
-size : 500px , result (if succeeded?) : False, output :  
-total iteration : 50 , succeed : 20
-size : 510px , result (if succeeded?) : False, output : D 
-total iteration : 51 , succeed : 20
-size : 520px , result (if succeeded?) : False, output :  
-total iteration : 52 , succeed : 20
-size : 530px , result (if succeeded?) : False, output :  
-total iteration : 53 , succeed : 20
-size : 540px , result (if succeeded?) : False, output :  
-total iteration : 54 , succeed : 20
-size : 550px , result (if succeeded?) : False, output :  
-total iteration : 55 , succeed : 20
+size : 280px , result (if succeeded?) : True, output : e 
+size : 290px , result (if succeeded?) : True, output : e 
+size : 300px , result (if succeeded?) : True, output : e 
+size : 310px , result (if succeeded?) : True, output : e 
+size : 320px , result (if succeeded?) : True, output : e 
+size : 330px , result (if succeeded?) : True, output : e 
+size : 340px , result (if succeeded?) : True, output : e 
+size : 350px , result (if succeeded?) : True, output : e 
+size : 360px , result (if succeeded?) : True, output : e 
+size : 370px , result (if succeeded?) : True, output : e 
+size : 380px , result (if succeeded?) : True, output : e 
+size : 390px , result (if succeeded?) : True, output : e 
+size : 400px , result (if succeeded?) : True, output : e 
+size : 410px , result (if succeeded?) : True, output : e 
+size : 420px , result (if succeeded?) : True, output : e 
+size : 430px , result (if succeeded?) : True, output : e 
+size : 440px , result (if succeeded?) : True, output : e 
+size : 450px , result (if succeeded?) : True, output : e 
+size : 460px , result (if succeeded?) : True, output : e 
+size : 470px , result (if succeeded?) : True, output : e 
+size : 480px , result (if succeeded?) : True, output : e 
+size : 490px , result (if succeeded?) : True, output : e 
+size : 500px , result (if succeeded?) : True, output : e 
+size : 510px , result (if succeeded?) : True, output : e 
+size : 520px , result (if succeeded?) : True, output : e 
+size : 530px , result (if succeeded?) : True, output : e 
+size : 540px , result (if succeeded?) : True, output : e 
+size : 550px , result (if succeeded?) : True, output : e 
 size : 560px , result (if succeeded?) : False, output :  
-total iteration : 56 , succeed : 20
-size : 570px , result (if succeeded?) : False, output :  
-total iteration : 57 , succeed : 20
+size : 570px , result (if succeeded?) : True, output : e 
 size : 580px , result (if succeeded?) : False, output :  
-total iteration : 58 , succeed : 20
 size : 590px , result (if succeeded?) : False, output :  
-total iteration : 59 , succeed : 20
 size : 600px , result (if succeeded?) : False, output :  
-total iteration : 60 , succeed : 20
-size : 610px , result (if succeeded?) : False, output : D 
-total iteration : 61 , succeed : 20
+size : 610px , result (if succeeded?) : False, output :  
 size : 620px , result (if succeeded?) : False, output :  
-total iteration : 62 , succeed : 20
 size : 630px , result (if succeeded?) : False, output :  
-total iteration : 63 , succeed : 20
 size : 640px , result (if succeeded?) : False, output :  
-total iteration : 64 , succeed : 20
 size : 650px , result (if succeeded?) : False, output :  
-total iteration : 65 , succeed : 20
 size : 660px , result (if succeeded?) : False, output :  
-total iteration : 66 , succeed : 20
 size : 670px , result (if succeeded?) : False, output :  
-total iteration : 67 , succeed : 20
 size : 680px , result (if succeeded?) : False, output :  
-total iteration : 68 , succeed : 20
 size : 690px , result (if succeeded?) : False, output :  
-total iteration : 69 , succeed : 20
 size : 700px , result (if succeeded?) : False, output :  
-total iteration : 70 , succeed : 20
 size : 710px , result (if succeeded?) : False, output :  
-total iteration : 71 , succeed : 20
 size : 720px , result (if succeeded?) : False, output :  
-total iteration : 72 , succeed : 20
 size : 730px , result (if succeeded?) : False, output :  
-total iteration : 73 , succeed : 20
 size : 740px , result (if succeeded?) : False, output :  
-total iteration : 74 , succeed : 20
 size : 750px , result (if succeeded?) : False, output :  
-total iteration : 75 , succeed : 20
 size : 760px , result (if succeeded?) : False, output :  
-total iteration : 76 , succeed : 20
 size : 770px , result (if succeeded?) : False, output :  
-total iteration : 77 , succeed : 20
 size : 780px , result (if succeeded?) : False, output :  
-total iteration : 78 , succeed : 20
 size : 790px , result (if succeeded?) : False, output :  
-total iteration : 79 , succeed : 20
 size : 800px , result (if succeeded?) : False, output :  
-total iteration : 80 , succeed : 20
 size : 810px , result (if succeeded?) : False, output :  
-total iteration : 81 , succeed : 20
 size : 820px , result (if succeeded?) : False, output :  
-total iteration : 82 , succeed : 20
 size : 830px , result (if succeeded?) : False, output :  
-total iteration : 83 , succeed : 20
 size : 840px , result (if succeeded?) : False, output :  
-total iteration : 84 , succeed : 20
 size : 850px , result (if succeeded?) : False, output :  
-total iteration : 85 , succeed : 20
 size : 860px , result (if succeeded?) : False, output :  
-total iteration : 86 , succeed : 20
 size : 870px , result (if succeeded?) : False, output :  
-total iteration : 87 , succeed : 20
 size : 880px , result (if succeeded?) : False, output :  
-total iteration : 88 , succeed : 20
 size : 890px , result (if succeeded?) : False, output :  
-total iteration : 89 , succeed : 20
 size : 900px , result (if succeeded?) : False, output :  
-total iteration : 90 , succeed : 20
 size : 910px , result (if succeeded?) : False, output :  
-total iteration : 91 , succeed : 20
 size : 920px , result (if succeeded?) : False, output :  
-total iteration : 92 , succeed : 20
 size : 930px , result (if succeeded?) : False, output :  
-total iteration : 93 , succeed : 20
 size : 940px , result (if succeeded?) : False, output :  
-total iteration : 94 , succeed : 20
 size : 950px , result (if succeeded?) : False, output :  
-total iteration : 95 , succeed : 20
 size : 960px , result (if succeeded?) : False, output :  
-total iteration : 96 , succeed : 20
 size : 970px , result (if succeeded?) : False, output :  
-total iteration : 97 , succeed : 20
 size : 980px , result (if succeeded?) : False, output :  
-total iteration : 98 , succeed : 20
 size : 990px , result (if succeeded?) : False, output :  
-total iteration : 99 , succeed : 20
 size : 1000px , result (if succeeded?) : False, output :  
-total iteration : 100 , succeed : 20
+total iteration : 100 , succeed : 55
