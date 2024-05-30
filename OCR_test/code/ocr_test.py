@@ -14,15 +14,8 @@ processor = DonutProcessor.from_pretrained("naver-clova-ix/donut-base")
 model = VisionEncoderDecoderModel.from_pretrained("naver-clova-ix/donut-base")
 device = "cuda" if torch.cuda.is_available() else "cpu"
 model.to(device)
-print(model.encoder)
-exit()
-K = model.encoder.embeddings.patch_embeddings.projection.weight[0][0]
-fig = plt.figure(figsize=(10,10))
-ax = fig.add_subplot(1,1,1)
-ax.imshow(K.to('cpu').detach().numpy().copy())
-fig.savefig('test')
-#plt.imshow(K)
-exit()
+
+
 dataset = load_dataset("naver-clova-ix/cord-v2", split="test")
 
 for idx,sample in tqdm(enumerate(dataset),total=len(dataset)):

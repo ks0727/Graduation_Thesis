@@ -5,11 +5,13 @@ from datasets import load_dataset
 
 processor = DonutProcessor.from_pretrained("naver-clova-ix/donut-base")
 model = VisionEncoderDecoderModel.from_pretrained("naver-clova-ix/donut-base")
+
 model.config.output_hidden_states = True
 device = "cuda" if torch.cuda.is_available() else "cpu"
 model.to(device)
 
-print(model.encoder)
+with torch.no_grad():
+    model.encoder.encoder.layers[0].blocks[0].intermediate.dense.weight[0] = 0.0
 
 dataset = load_dataset("hf-internal-testing/example-documents", split="test")
 
@@ -28,7 +30,8 @@ outputs = model.generate(
     return_dict_in_generate=True,
 )
 
-encoder_last_hidden = outputs.encoder_hidden_states
+encoder_last_hidden = outputs.encoder_hidden_states[-1]
+print(encoder_last_hidden.shape)
 #print(encoder_last_hidden[4].size())
 
 decoded_results = processor.tokenizer.batch_decode(outputs.sequences)

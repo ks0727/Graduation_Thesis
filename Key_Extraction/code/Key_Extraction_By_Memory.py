@@ -41,10 +41,6 @@ def main(args)->int:
     max_dim = 512*2**(args.stage_for_analysis) #max dimension of the key to analyze
     save = []
     def hook(model,input,output):
-        # print(output.is_cuda)
-        # print(output.shape)
-        # save.append(output.detach())
-        # save.append(output.to('cpu'))
         save.append(output.data.cpu())
     
     encoder = model.encoder

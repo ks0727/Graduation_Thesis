@@ -25,7 +25,7 @@ def main():
     result_path = "../result/color"
     path = os.path.join(abs_path,result_path)
     result_dict = {}
-    for i in tqdm(range(1),total=len(words)):
+    for i in tqdm(range(len(words)),total=len(words)):
         result_dict[words[i]] = {}
         
         txt_file_name = words[i]+'.txt'
@@ -100,4 +100,4 @@ def get_acc_json():
 if __name__ == '__main__':
     main()
     get_acc_json()
-    
+

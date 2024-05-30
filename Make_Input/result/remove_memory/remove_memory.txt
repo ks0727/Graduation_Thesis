@@ -1,0 +1,102 @@
+result of the word : C
+text positoin(width,height) : 10 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 20 , result (if succeeded?) : True, output : C 
+text positoin(width,height) : 30 , result (if succeeded?) : False, output : c 
+text positoin(width,height) : 40 , result (if succeeded?) : True, output : C 
+text positoin(width,height) : 50 , result (if succeeded?) : True, output : C 
+text positoin(width,height) : 60 , result (if succeeded?) : True, output : C 
+text positoin(width,height) : 70 , result (if succeeded?) : True, output : C 
+text positoin(width,height) : 80 , result (if succeeded?) : True, output : C 
+text positoin(width,height) : 90 , result (if succeeded?) : True, output : C 
+text positoin(width,height) : 100 , result (if succeeded?) : True, output : C 
+text positoin(width,height) : 110 , result (if succeeded?) : True, output : C 
+text positoin(width,height) : 120 , result (if succeeded?) : True, output : C 
+text positoin(width,height) : 130 , result (if succeeded?) : True, output : C 
+text positoin(width,height) : 140 , result (if succeeded?) : True, output : C 
+text positoin(width,height) : 150 , result (if succeeded?) : True, output : C 
+text positoin(width,height) : 160 , result (if succeeded?) : True, output : C 
+text positoin(width,height) : 170 , result (if succeeded?) : True, output : C 
+text positoin(width,height) : 180 , result (if succeeded?) : True, output : C 
+text positoin(width,height) : 190 , result (if succeeded?) : True, output : C 
+text positoin(width,height) : 200 , result (if succeeded?) : True, output : C 
+text positoin(width,height) : 210 , result (if succeeded?) : True, output : C 
+text positoin(width,height) : 220 , result (if succeeded?) : True, output : C 
+text positoin(width,height) : 230 , result (if succeeded?) : True, output : C 
+text positoin(width,height) : 240 , result (if succeeded?) : True, output : C 
+text positoin(width,height) : 250 , result (if succeeded?) : True, output : C 
+text positoin(width,height) : 260 , result (if succeeded?) : True, output : C 
+text positoin(width,height) : 270 , result (if succeeded?) : True, output : C 
+text positoin(width,height) : 280 , result (if succeeded?) : True, output : C 
+text positoin(width,height) : 290 , result (if succeeded?) : True, output : C 
+text positoin(width,height) : 300 , result (if succeeded?) : True, output : C 
+text positoin(width,height) : 310 , result (if succeeded?) : True, output : C 
+text positoin(width,height) : 320 , result (if succeeded?) : True, output : C 
+text positoin(width,height) : 330 , result (if succeeded?) : True, output : C 
+text positoin(width,height) : 340 , result (if succeeded?) : True, output : C 
+text positoin(width,height) : 350 , result (if succeeded?) : True, output : C 
+text positoin(width,height) : 360 , result (if succeeded?) : True, output : C 
+text positoin(width,height) : 370 , result (if succeeded?) : True, output : C 
+text positoin(width,height) : 380 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 390 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 400 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 410 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 420 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 430 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 440 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 450 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 460 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 470 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 480 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 490 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 500 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 510 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 520 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 530 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 540 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 550 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 560 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 570 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 580 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 590 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 600 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 610 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 620 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 630 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 640 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 650 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 660 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 670 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 680 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 690 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 700 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 710 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 720 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 730 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 740 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 750 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 760 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 770 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 780 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 790 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 800 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 810 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 820 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 830 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 840 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 850 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 860 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 870 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 880 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 890 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 900 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 910 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 920 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 930 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 940 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 950 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 960 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 970 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 980 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 990 , result (if succeeded?) : False, output :  
+text positoin(width,height) : 1000 , result (if succeeded?) : False, output :  
+total iteration : 1 , succeed : 0

@@ -4,10 +4,10 @@ color : (0,0,32) , result (if succeeded?) : False, output : X
 color : (0,0,64) , result (if succeeded?) : False, output : X 
 color : (0,0,96) , result (if succeeded?) : False, output : X 
 color : (0,0,128) , result (if succeeded?) : False, output : X 
-color : (0,0,160) , result (if succeeded?) : False, output : X 
-color : (0,0,192) , result (if succeeded?) : False, output : X 
-color : (0,0,224) , result (if succeeded?) : False, output : X 
-color : (0,0,255) , result (if succeeded?) : False, output : X 
+color : (0,0,160) , result (if succeeded?) : True, output : x 
+color : (0,0,192) , result (if succeeded?) : True, output : x 
+color : (0,0,224) , result (if succeeded?) : True, output : x 
+color : (0,0,255) , result (if succeeded?) : True, output : x 
 color : (0,32,0) , result (if succeeded?) : False, output : X 
 color : (0,32,32) , result (if succeeded?) : False, output : X 
 color : (0,32,64) , result (if succeeded?) : False, output : X 
@@ -16,7 +16,7 @@ color : (0,32,128) , result (if succeeded?) : False, output : X
 color : (0,32,160) , result (if succeeded?) : False, output : X 
 color : (0,32,192) , result (if succeeded?) : False, output : X 
 color : (0,32,224) , result (if succeeded?) : False, output : X 
-color : (0,32,255) , result (if succeeded?) : False, output : X 
+color : (0,32,255) , result (if succeeded?) : True, output : x 
 color : (0,64,0) , result (if succeeded?) : False, output : X 
 color : (0,64,32) , result (if succeeded?) : False, output : X 
 color : (0,64,64) , result (if succeeded?) : False, output : X 
@@ -85,10 +85,10 @@ color : (32,0,32) , result (if succeeded?) : False, output : X
 color : (32,0,64) , result (if succeeded?) : False, output : X 
 color : (32,0,96) , result (if succeeded?) : False, output : X 
 color : (32,0,128) , result (if succeeded?) : False, output : X 
-color : (32,0,160) , result (if succeeded?) : False, output : X 
-color : (32,0,192) , result (if succeeded?) : False, output : X 
-color : (32,0,224) , result (if succeeded?) : False, output : X 
-color : (32,0,255) , result (if succeeded?) : False, output : X 
+color : (32,0,160) , result (if succeeded?) : True, output : x 
+color : (32,0,192) , result (if succeeded?) : True, output : x 
+color : (32,0,224) , result (if succeeded?) : True, output : x 
+color : (32,0,255) , result (if succeeded?) : True, output : x 
 color : (32,32,0) , result (if succeeded?) : False, output : X 
 color : (32,32,32) , result (if succeeded?) : False, output : X 
 color : (32,32,64) , result (if succeeded?) : False, output : X 
@@ -97,7 +97,7 @@ color : (32,32,128) , result (if succeeded?) : False, output : X
 color : (32,32,160) , result (if succeeded?) : False, output : X 
 color : (32,32,192) , result (if succeeded?) : False, output : X 
 color : (32,32,224) , result (if succeeded?) : False, output : X 
-color : (32,32,255) , result (if succeeded?) : False, output : X 
+color : (32,32,255) , result (if succeeded?) : True, output : x 
 color : (32,64,0) , result (if succeeded?) : False, output : X 
 color : (32,64,32) , result (if succeeded?) : False, output : X 
 color : (32,64,64) , result (if succeeded?) : False, output : X 
@@ -166,10 +166,10 @@ color : (64,0,32) , result (if succeeded?) : False, output : X
 color : (64,0,64) , result (if succeeded?) : False, output : X 
 color : (64,0,96) , result (if succeeded?) : False, output : X 
 color : (64,0,128) , result (if succeeded?) : False, output : X 
-color : (64,0,160) , result (if succeeded?) : False, output : X 
-color : (64,0,192) , result (if succeeded?) : False, output : X 
-color : (64,0,224) , result (if succeeded?) : False, output : X 
-color : (64,0,255) , result (if succeeded?) : False, output : X 
+color : (64,0,160) , result (if succeeded?) : True, output : x 
+color : (64,0,192) , result (if succeeded?) : True, output : x 
+color : (64,0,224) , result (if succeeded?) : True, output : x 
+color : (64,0,255) , result (if succeeded?) : True, output : x 
 color : (64,32,0) , result (if succeeded?) : False, output : X 
 color : (64,32,32) , result (if succeeded?) : False, output : X 
 color : (64,32,64) , result (if succeeded?) : False, output : X 
@@ -178,7 +178,7 @@ color : (64,32,128) , result (if succeeded?) : False, output : X
 color : (64,32,160) , result (if succeeded?) : False, output : X 
 color : (64,32,192) , result (if succeeded?) : False, output : X 
 color : (64,32,224) , result (if succeeded?) : False, output : X 
-color : (64,32,255) , result (if succeeded?) : False, output : X 
+color : (64,32,255) , result (if succeeded?) : True, output : x 
 color : (64,64,0) , result (if succeeded?) : False, output : X 
 color : (64,64,32) , result (if succeeded?) : False, output : X 
 color : (64,64,64) , result (if succeeded?) : False, output : X 
@@ -247,10 +247,10 @@ color : (96,0,32) , result (if succeeded?) : False, output : X
 color : (96,0,64) , result (if succeeded?) : False, output : X 
 color : (96,0,96) , result (if succeeded?) : False, output : X 
 color : (96,0,128) , result (if succeeded?) : False, output : X 
-color : (96,0,160) , result (if succeeded?) : False, output : X 
-color : (96,0,192) , result (if succeeded?) : False, output : X 
-color : (96,0,224) , result (if succeeded?) : False, output : X 
-color : (96,0,255) , result (if succeeded?) : False, output : X 
+color : (96,0,160) , result (if succeeded?) : True, output : x 
+color : (96,0,192) , result (if succeeded?) : True, output : x 
+color : (96,0,224) , result (if succeeded?) : True, output : x 
+color : (96,0,255) , result (if succeeded?) : True, output : x 
 color : (96,32,0) , result (if succeeded?) : False, output : X 
 color : (96,32,32) , result (if succeeded?) : False, output : X 
 color : (96,32,64) , result (if succeeded?) : False, output : X 
@@ -259,7 +259,7 @@ color : (96,32,128) , result (if succeeded?) : False, output : X
 color : (96,32,160) , result (if succeeded?) : False, output : X 
 color : (96,32,192) , result (if succeeded?) : False, output : X 
 color : (96,32,224) , result (if succeeded?) : False, output : X 
-color : (96,32,255) , result (if succeeded?) : False, output : X 
+color : (96,32,255) , result (if succeeded?) : True, output : x 
 color : (96,64,0) , result (if succeeded?) : False, output : X 
 color : (96,64,32) , result (if succeeded?) : False, output : X 
 color : (96,64,64) , result (if succeeded?) : False, output : X 
@@ -327,11 +327,11 @@ color : (128,0,0) , result (if succeeded?) : False, output : X
 color : (128,0,32) , result (if succeeded?) : False, output : X 
 color : (128,0,64) , result (if succeeded?) : False, output : X 
 color : (128,0,96) , result (if succeeded?) : False, output : X 
-color : (128,0,128) , result (if succeeded?) : False, output : X 
-color : (128,0,160) , result (if succeeded?) : False, output : X 
-color : (128,0,192) , result (if succeeded?) : False, output : X 
-color : (128,0,224) , result (if succeeded?) : False, output : X 
-color : (128,0,255) , result (if succeeded?) : False, output : x x 
+color : (128,0,128) , result (if succeeded?) : True, output : x 
+color : (128,0,160) , result (if succeeded?) : True, output : x 
+color : (128,0,192) , result (if succeeded?) : True, output : x 
+color : (128,0,224) , result (if succeeded?) : True, output : x 
+color : (128,0,255) , result (if succeeded?) : True, output : x 
 color : (128,32,0) , result (if succeeded?) : False, output : X 
 color : (128,32,32) , result (if succeeded?) : False, output : X 
 color : (128,32,64) , result (if succeeded?) : False, output : X 
@@ -339,8 +339,8 @@ color : (128,32,96) , result (if succeeded?) : False, output : X
 color : (128,32,128) , result (if succeeded?) : False, output : X 
 color : (128,32,160) , result (if succeeded?) : False, output : X 
 color : (128,32,192) , result (if succeeded?) : False, output : X 
-color : (128,32,224) , result (if succeeded?) : False, output : X 
-color : (128,32,255) , result (if succeeded?) : False, output : X 
+color : (128,32,224) , result (if succeeded?) : True, output : x 
+color : (128,32,255) , result (if succeeded?) : True, output : x 
 color : (128,64,0) , result (if succeeded?) : False, output : X 
 color : (128,64,32) , result (if succeeded?) : False, output : X 
 color : (128,64,64) , result (if succeeded?) : False, output : X 
@@ -408,20 +408,20 @@ color : (160,0,0) , result (if succeeded?) : False, output : X
 color : (160,0,32) , result (if succeeded?) : False, output : X 
 color : (160,0,64) , result (if succeeded?) : False, output : X 
 color : (160,0,96) , result (if succeeded?) : False, output : X 
-color : (160,0,128) , result (if succeeded?) : False, output : X 
-color : (160,0,160) , result (if succeeded?) : False, output : X 
-color : (160,0,192) , result (if succeeded?) : False, output : X 
-color : (160,0,224) , result (if succeeded?) : False, output : x x 
-color : (160,0,255) , result (if succeeded?) : False, output : x x 
+color : (160,0,128) , result (if succeeded?) : True, output : x 
+color : (160,0,160) , result (if succeeded?) : True, output : x 
+color : (160,0,192) , result (if succeeded?) : True, output : x 
+color : (160,0,224) , result (if succeeded?) : True, output : x 
+color : (160,0,255) , result (if succeeded?) : True, output : x 
 color : (160,32,0) , result (if succeeded?) : False, output : X 
 color : (160,32,32) , result (if succeeded?) : False, output : X 
 color : (160,32,64) , result (if succeeded?) : False, output : X 
 color : (160,32,96) , result (if succeeded?) : False, output : X 
 color : (160,32,128) , result (if succeeded?) : False, output : X 
 color : (160,32,160) , result (if succeeded?) : False, output : X 
-color : (160,32,192) , result (if succeeded?) : False, output : X 
-color : (160,32,224) , result (if succeeded?) : False, output : X 
-color : (160,32,255) , result (if succeeded?) : False, output : X 
+color : (160,32,192) , result (if succeeded?) : True, output : x 
+color : (160,32,224) , result (if succeeded?) : True, output : x 
+color : (160,32,255) , result (if succeeded?) : True, output : x 
 color : (160,64,0) , result (if succeeded?) : False, output : X 
 color : (160,64,32) , result (if succeeded?) : False, output : X 
 color : (160,64,64) , result (if succeeded?) : False, output : X 
@@ -489,20 +489,20 @@ color : (192,0,0) , result (if succeeded?) : False, output : X
 color : (192,0,32) , result (if succeeded?) : False, output : X 
 color : (192,0,64) , result (if succeeded?) : False, output : X 
 color : (192,0,96) , result (if succeeded?) : False, output : X 
-color : (192,0,128) , result (if succeeded?) : False, output : X 
-color : (192,0,160) , result (if succeeded?) : False, output : X 
-color : (192,0,192) , result (if succeeded?) : False, output : X 
-color : (192,0,224) , result (if succeeded?) : False, output : x x 
-color : (192,0,255) , result (if succeeded?) : False, output : x x 
+color : (192,0,128) , result (if succeeded?) : True, output : x 
+color : (192,0,160) , result (if succeeded?) : True, output : x 
+color : (192,0,192) , result (if succeeded?) : True, output : x 
+color : (192,0,224) , result (if succeeded?) : True, output : x 
+color : (192,0,255) , result (if succeeded?) : True, output : x 
 color : (192,32,0) , result (if succeeded?) : False, output : X 
 color : (192,32,32) , result (if succeeded?) : False, output : X 
 color : (192,32,64) , result (if succeeded?) : False, output : X 
 color : (192,32,96) , result (if succeeded?) : False, output : X 
 color : (192,32,128) , result (if succeeded?) : False, output : X 
 color : (192,32,160) , result (if succeeded?) : False, output : X 
-color : (192,32,192) , result (if succeeded?) : False, output : X 
-color : (192,32,224) , result (if succeeded?) : False, output : X 
-color : (192,32,255) , result (if succeeded?) : False, output : X 
+color : (192,32,192) , result (if succeeded?) : True, output : x 
+color : (192,32,224) , result (if succeeded?) : True, output : x 
+color : (192,32,255) , result (if succeeded?) : True, output : x 
 color : (192,64,0) , result (if succeeded?) : False, output : X 
 color : (192,64,32) , result (if succeeded?) : False, output : X 
 color : (192,64,64) , result (if succeeded?) : False, output : X 
@@ -511,7 +511,7 @@ color : (192,64,128) , result (if succeeded?) : False, output : X
 color : (192,64,160) , result (if succeeded?) : False, output : X 
 color : (192,64,192) , result (if succeeded?) : False, output : X 
 color : (192,64,224) , result (if succeeded?) : False, output : X 
-color : (192,64,255) , result (if succeeded?) : False, output : X 
+color : (192,64,255) , result (if succeeded?) : True, output : x 
 color : (192,96,0) , result (if succeeded?) : False, output : X 
 color : (192,96,32) , result (if succeeded?) : False, output : X 
 color : (192,96,64) , result (if succeeded?) : False, output : X 
@@ -570,20 +570,20 @@ color : (224,0,0) , result (if succeeded?) : False, output : X
 color : (224,0,32) , result (if succeeded?) : False, output : X 
 color : (224,0,64) , result (if succeeded?) : False, output : X 
 color : (224,0,96) , result (if succeeded?) : False, output : X 
-color : (224,0,128) , result (if succeeded?) : False, output : X 
-color : (224,0,160) , result (if succeeded?) : False, output : X 
-color : (224,0,192) , result (if succeeded?) : False, output : x x 
-color : (224,0,224) , result (if succeeded?) : False, output : x x 
-color : (224,0,255) , result (if succeeded?) : False, output : x x 
+color : (224,0,128) , result (if succeeded?) : True, output : x 
+color : (224,0,160) , result (if succeeded?) : True, output : x 
+color : (224,0,192) , result (if succeeded?) : True, output : x 
+color : (224,0,224) , result (if succeeded?) : True, output : x 
+color : (224,0,255) , result (if succeeded?) : True, output : x 
 color : (224,32,0) , result (if succeeded?) : False, output : X 
 color : (224,32,32) , result (if succeeded?) : False, output : X 
 color : (224,32,64) , result (if succeeded?) : False, output : X 
 color : (224,32,96) , result (if succeeded?) : False, output : X 
 color : (224,32,128) , result (if succeeded?) : False, output : X 
 color : (224,32,160) , result (if succeeded?) : False, output : X 
-color : (224,32,192) , result (if succeeded?) : False, output : X 
-color : (224,32,224) , result (if succeeded?) : False, output : X 
-color : (224,32,255) , result (if succeeded?) : False, output : x x 
+color : (224,32,192) , result (if succeeded?) : True, output : x 
+color : (224,32,224) , result (if succeeded?) : True, output : x 
+color : (224,32,255) , result (if succeeded?) : True, output : x 
 color : (224,64,0) , result (if succeeded?) : False, output : X 
 color : (224,64,32) , result (if succeeded?) : False, output : X 
 color : (224,64,64) , result (if succeeded?) : False, output : X 
@@ -591,8 +591,8 @@ color : (224,64,96) , result (if succeeded?) : False, output : X
 color : (224,64,128) , result (if succeeded?) : False, output : X 
 color : (224,64,160) , result (if succeeded?) : False, output : X 
 color : (224,64,192) , result (if succeeded?) : False, output : X 
-color : (224,64,224) , result (if succeeded?) : False, output : X 
-color : (224,64,255) , result (if succeeded?) : False, output : X 
+color : (224,64,224) , result (if succeeded?) : True, output : x 
+color : (224,64,255) , result (if succeeded?) : True, output : x 
 color : (224,96,0) , result (if succeeded?) : False, output : X 
 color : (224,96,32) , result (if succeeded?) : False, output : X 
 color : (224,96,64) , result (if succeeded?) : False, output : X 
@@ -635,12 +635,12 @@ color : (224,224,64) , result (if succeeded?) : False, output : X
 color : (224,224,96) , result (if succeeded?) : False, output : X 
 color : (224,224,128) , result (if succeeded?) : False, output : X 
 color : (224,224,160) , result (if succeeded?) : False, output : X 
-color : (224,224,192) , result (if succeeded?) : False, output : < 
-color : (224,224,224) , result (if succeeded?) : False, output : < 
-color : (224,224,255) , result (if succeeded?) : False, output : < 
+color : (224,224,192) , result (if succeeded?) : False, output : X 
+color : (224,224,224) , result (if succeeded?) : False, output : X 
+color : (224,224,255) , result (if succeeded?) : False, output : X 
 color : (224,255,0) , result (if succeeded?) : False, output : X 
 color : (224,255,32) , result (if succeeded?) : False, output : X 
-color : (224,255,64) , result (if succeeded?) : False, output :  
+color : (224,255,64) , result (if succeeded?) : False, output : X 
 color : (224,255,96) , result (if succeeded?) : False, output :  
 color : (224,255,128) , result (if succeeded?) : False, output :  
 color : (224,255,160) , result (if succeeded?) : False, output :  
@@ -651,20 +651,20 @@ color : (255,0,0) , result (if succeeded?) : False, output : X
 color : (255,0,32) , result (if succeeded?) : False, output : X 
 color : (255,0,64) , result (if succeeded?) : False, output : X 
 color : (255,0,96) , result (if succeeded?) : False, output : X 
-color : (255,0,128) , result (if succeeded?) : False, output : X 
-color : (255,0,160) , result (if succeeded?) : False, output : X 
-color : (255,0,192) , result (if succeeded?) : False, output : x x 
-color : (255,0,224) , result (if succeeded?) : False, output : x x 
-color : (255,0,255) , result (if succeeded?) : False, output : x x 
+color : (255,0,128) , result (if succeeded?) : True, output : x 
+color : (255,0,160) , result (if succeeded?) : True, output : x 
+color : (255,0,192) , result (if succeeded?) : True, output : x 
+color : (255,0,224) , result (if succeeded?) : True, output : x 
+color : (255,0,255) , result (if succeeded?) : True, output : x 
 color : (255,32,0) , result (if succeeded?) : False, output : X 
 color : (255,32,32) , result (if succeeded?) : False, output : X 
 color : (255,32,64) , result (if succeeded?) : False, output : X 
 color : (255,32,96) , result (if succeeded?) : False, output : X 
 color : (255,32,128) , result (if succeeded?) : False, output : X 
-color : (255,32,160) , result (if succeeded?) : False, output : X 
-color : (255,32,192) , result (if succeeded?) : False, output : X 
-color : (255,32,224) , result (if succeeded?) : False, output : x x 
-color : (255,32,255) , result (if succeeded?) : False, output : x x 
+color : (255,32,160) , result (if succeeded?) : True, output : x 
+color : (255,32,192) , result (if succeeded?) : True, output : x 
+color : (255,32,224) , result (if succeeded?) : True, output : x 
+color : (255,32,255) , result (if succeeded?) : True, output : x 
 color : (255,64,0) , result (if succeeded?) : False, output : X 
 color : (255,64,32) , result (if succeeded?) : False, output : X 
 color : (255,64,64) , result (if succeeded?) : False, output : X 
@@ -672,8 +672,8 @@ color : (255,64,96) , result (if succeeded?) : False, output : X
 color : (255,64,128) , result (if succeeded?) : False, output : X 
 color : (255,64,160) , result (if succeeded?) : False, output : X 
 color : (255,64,192) , result (if succeeded?) : False, output : X 
-color : (255,64,224) , result (if succeeded?) : False, output : X 
-color : (255,64,255) , result (if succeeded?) : False, output : X 
+color : (255,64,224) , result (if succeeded?) : True, output : x 
+color : (255,64,255) , result (if succeeded?) : True, output : x 
 color : (255,96,0) , result (if succeeded?) : False, output : X 
 color : (255,96,32) , result (if succeeded?) : False, output : X 
 color : (255,96,64) , result (if succeeded?) : False, output : X 
@@ -716,11 +716,11 @@ color : (255,224,64) , result (if succeeded?) : False, output : X
 color : (255,224,96) , result (if succeeded?) : False, output : X 
 color : (255,224,128) , result (if succeeded?) : False, output : X 
 color : (255,224,160) , result (if succeeded?) : False, output : X 
-color : (255,224,192) , result (if succeeded?) : False, output : < 
-color : (255,224,224) , result (if succeeded?) : False, output : < 
-color : (255,224,255) , result (if succeeded?) : False, output : < 
+color : (255,224,192) , result (if succeeded?) : False, output :  
+color : (255,224,224) , result (if succeeded?) : False, output :  
+color : (255,224,255) , result (if succeeded?) : False, output :  
 color : (255,255,0) , result (if succeeded?) : False, output : X 
-color : (255,255,32) , result (if succeeded?) : False, output :  
+color : (255,255,32) , result (if succeeded?) : False, output : X 
 color : (255,255,64) , result (if succeeded?) : False, output :  
 color : (255,255,96) , result (if succeeded?) : False, output :  
 color : (255,255,128) , result (if succeeded?) : False, output :  
@@ -728,4 +728,4 @@ color : (255,255,160) , result (if succeeded?) : False, output :
 color : (255,255,192) , result (if succeeded?) : False, output :  
 color : (255,255,224) , result (if succeeded?) : False, output :  
 color : (255,255,255) , result (if succeeded?) : False, output :  
-total iteration : 729 , succeed : 0
+total iteration : 729 , succeed : 65

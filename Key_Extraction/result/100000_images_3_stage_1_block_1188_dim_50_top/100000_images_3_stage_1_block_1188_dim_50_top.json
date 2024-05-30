@@ -1,0 +1,302 @@
+{
+  "1": {
+    "rank": "1",
+    "similarity": "1.3731005",
+    "data_index": "87378",
+    "patch_index": "2714"
+  },
+  "2": {
+    "rank": "2",
+    "similarity": "1.3614061",
+    "data_index": "9890",
+    "patch_index": "1598"
+  },
+  "3": {
+    "rank": "3",
+    "similarity": "1.2161795",
+    "data_index": "43962",
+    "patch_index": "4037"
+  },
+  "4": {
+    "rank": "4",
+    "similarity": "1.2153738",
+    "data_index": "53061",
+    "patch_index": "2565"
+  },
+  "5": {
+    "rank": "5",
+    "similarity": "1.1701066",
+    "data_index": "75472",
+    "patch_index": "2172"
+  },
+  "6": {
+    "rank": "6",
+    "similarity": "1.167396",
+    "data_index": "83798",
+    "patch_index": "1639"
+  },
+  "7": {
+    "rank": "7",
+    "similarity": "1.1604922",
+    "data_index": "68238",
+    "patch_index": "4103"
+  },
+  "8": {
+    "rank": "8",
+    "similarity": "1.1429198",
+    "data_index": "20010",
+    "patch_index": "2549"
+  },
+  "9": {
+    "rank": "9",
+    "similarity": "1.1321875",
+    "data_index": "87918",
+    "patch_index": "1049"
+  },
+  "10": {
+    "rank": "10",
+    "similarity": "1.1200134",
+    "data_index": "79542",
+    "patch_index": "2477"
+  },
+  "11": {
+    "rank": "11",
+    "similarity": "1.1195128",
+    "data_index": "83798",
+    "patch_index": "1640"
+  },
+  "12": {
+    "rank": "12",
+    "similarity": "1.0932482",
+    "data_index": "50450",
+    "patch_index": "3390"
+  },
+  "13": {
+    "rank": "13",
+    "similarity": "1.0828823",
+    "data_index": "99999",
+    "patch_index": "4222"
+  },
+  "14": {
+    "rank": "14",
+    "similarity": "1.0774188",
+    "data_index": "96702",
+    "patch_index": "2468"
+  },
+  "15": {
+    "rank": "15",
+    "similarity": "1.0672579",
+    "data_index": "12014",
+    "patch_index": "2617"
+  },
+  "16": {
+    "rank": "16",
+    "similarity": "1.0618074",
+    "data_index": "68235",
+    "patch_index": "3385"
+  },
+  "17": {
+    "rank": "17",
+    "similarity": "1.061653",
+    "data_index": "87918",
+    "patch_index": "1048"
+  },
+  "18": {
+    "rank": "18",
+    "similarity": "1.0268762",
+    "data_index": "76185",
+    "patch_index": "2542"
+  },
+  "19": {
+    "rank": "19",
+    "similarity": "1.0252941",
+    "data_index": "16144",
+    "patch_index": "1340"
+  },
+  "20": {
+    "rank": "20",
+    "similarity": "1.0236739",
+    "data_index": "62608",
+    "patch_index": "2053"
+  },
+  "21": {
+    "rank": "21",
+    "similarity": "1.0194232",
+    "data_index": "47975",
+    "patch_index": "3929"
+  },
+  "22": {
+    "rank": "22",
+    "similarity": "1.013583",
+    "data_index": "96702",
+    "patch_index": "2467"
+  },
+  "23": {
+    "rank": "23",
+    "similarity": "1.0099163",
+    "data_index": "56255",
+    "patch_index": "3858"
+  },
+  "24": {
+    "rank": "24",
+    "similarity": "1.0034387",
+    "data_index": "39782",
+    "patch_index": "2923"
+  },
+  "25": {
+    "rank": "25",
+    "similarity": "0.9775067",
+    "data_index": "8318",
+    "patch_index": "3133"
+  },
+  "26": {
+    "rank": "26",
+    "similarity": "0.97143877",
+    "data_index": "64145",
+    "patch_index": "1358"
+  },
+  "27": {
+    "rank": "27",
+    "similarity": "0.9695014",
+    "data_index": "50450",
+    "patch_index": "3449"
+  },
+  "28": {
+    "rank": "28",
+    "similarity": "0.9628716",
+    "data_index": "94880",
+    "patch_index": "1633"
+  },
+  "29": {
+    "rank": "29",
+    "similarity": "0.9596967",
+    "data_index": "10405",
+    "patch_index": "3550"
+  },
+  "30": {
+    "rank": "30",
+    "similarity": "0.9456017",
+    "data_index": "47975",
+    "patch_index": "3989"
+  },
+  "31": {
+    "rank": "31",
+    "similarity": "0.94338083",
+    "data_index": "32462",
+    "patch_index": "864"
+  },
+  "32": {
+    "rank": "32",
+    "similarity": "0.9412021",
+    "data_index": "8119",
+    "patch_index": "1398"
+  },
+  "33": {
+    "rank": "33",
+    "similarity": "0.9401495",
+    "data_index": "88344",
+    "patch_index": "1519"
+  },
+  "34": {
+    "rank": "34",
+    "similarity": "0.93582183",
+    "data_index": "79245",
+    "patch_index": "2611"
+  },
+  "35": {
+    "rank": "35",
+    "similarity": "0.93482983",
+    "data_index": "34939",
+    "patch_index": "807"
+  },
+  "36": {
+    "rank": "36",
+    "similarity": "0.9248779",
+    "data_index": "79542",
+    "patch_index": "2359"
+  },
+  "37": {
+    "rank": "37",
+    "similarity": "0.9172651",
+    "data_index": "56255",
+    "patch_index": "3799"
+  },
+  "38": {
+    "rank": "38",
+    "similarity": "0.91606504",
+    "data_index": "87378",
+    "patch_index": "2715"
+  },
+  "39": {
+    "rank": "39",
+    "similarity": "0.89823467",
+    "data_index": "32036",
+    "patch_index": "3202"
+  },
+  "40": {
+    "rank": "40",
+    "similarity": "0.89610744",
+    "data_index": "34939",
+    "patch_index": "806"
+  },
+  "41": {
+    "rank": "41",
+    "similarity": "0.8958859",
+    "data_index": "32036",
+    "patch_index": "3201"
+  },
+  "42": {
+    "rank": "42",
+    "similarity": "0.8787329",
+    "data_index": "87378",
+    "patch_index": "2773"
+  },
+  "43": {
+    "rank": "43",
+    "similarity": "0.871997",
+    "data_index": "2712",
+    "patch_index": "1464"
+  },
+  "44": {
+    "rank": "44",
+    "similarity": "0.8676412",
+    "data_index": "30601",
+    "patch_index": "2655"
+  },
+  "45": {
+    "rank": "45",
+    "similarity": "0.8645514",
+    "data_index": "46788",
+    "patch_index": "3094"
+  },
+  "46": {
+    "rank": "46",
+    "similarity": "0.85136056",
+    "data_index": "51029",
+    "patch_index": "1867"
+  },
+  "47": {
+    "rank": "47",
+    "similarity": "0.8512185",
+    "data_index": "20010",
+    "patch_index": "2490"
+  },
+  "48": {
+    "rank": "48",
+    "similarity": "0.8494179",
+    "data_index": "47975",
+    "patch_index": "3988"
+  },
+  "49": {
+    "rank": "49",
+    "similarity": "0.84576684",
+    "data_index": "64523",
+    "patch_index": "2597"
+  },
+  "50": {
+    "rank": "50",
+    "similarity": "0.8450923",
+    "data_index": "56338",
+    "patch_index": "2483"
+  }
+}

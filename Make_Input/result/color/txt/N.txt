@@ -241,7 +241,7 @@ color : (64,255,128) , result (if succeeded?) : True, output : N
 color : (64,255,160) , result (if succeeded?) : True, output : N 
 color : (64,255,192) , result (if succeeded?) : True, output : N 
 color : (64,255,224) , result (if succeeded?) : True, output : N 
-color : (64,255,255) , result (if succeeded?) : False, output : Z 
+color : (64,255,255) , result (if succeeded?) : True, output : N 
 color : (96,0,0) , result (if succeeded?) : True, output : N 
 color : (96,0,32) , result (if succeeded?) : True, output : N 
 color : (96,0,64) , result (if succeeded?) : True, output : N 
@@ -313,7 +313,7 @@ color : (96,224,128) , result (if succeeded?) : True, output : N
 color : (96,224,160) , result (if succeeded?) : True, output : N 
 color : (96,224,192) , result (if succeeded?) : True, output : N 
 color : (96,224,224) , result (if succeeded?) : True, output : N 
-color : (96,224,255) , result (if succeeded?) : False, output : Z 
+color : (96,224,255) , result (if succeeded?) : True, output : N 
 color : (96,255,0) , result (if succeeded?) : True, output : N 
 color : (96,255,32) , result (if succeeded?) : True, output : N 
 color : (96,255,64) , result (if succeeded?) : True, output : N 
@@ -321,8 +321,8 @@ color : (96,255,96) , result (if succeeded?) : True, output : N
 color : (96,255,128) , result (if succeeded?) : True, output : N 
 color : (96,255,160) , result (if succeeded?) : True, output : N 
 color : (96,255,192) , result (if succeeded?) : True, output : N 
-color : (96,255,224) , result (if succeeded?) : False, output : Z 
-color : (96,255,255) , result (if succeeded?) : False, output : Z 
+color : (96,255,224) , result (if succeeded?) : True, output : N 
+color : (96,255,255) , result (if succeeded?) : True, output : N 
 color : (128,0,0) , result (if succeeded?) : True, output : N 
 color : (128,0,32) , result (if succeeded?) : True, output : N 
 color : (128,0,64) , result (if succeeded?) : True, output : N 
@@ -393,8 +393,8 @@ color : (128,224,96) , result (if succeeded?) : True, output : N
 color : (128,224,128) , result (if succeeded?) : True, output : N 
 color : (128,224,160) , result (if succeeded?) : True, output : N 
 color : (128,224,192) , result (if succeeded?) : True, output : N 
-color : (128,224,224) , result (if succeeded?) : False, output : Z 
-color : (128,224,255) , result (if succeeded?) : False, output : Z 
+color : (128,224,224) , result (if succeeded?) : True, output : N 
+color : (128,224,255) , result (if succeeded?) : True, output : N 
 color : (128,255,0) , result (if succeeded?) : True, output : N 
 color : (128,255,32) , result (if succeeded?) : True, output : N 
 color : (128,255,64) , result (if succeeded?) : True, output : N 
@@ -402,8 +402,8 @@ color : (128,255,96) , result (if succeeded?) : True, output : N
 color : (128,255,128) , result (if succeeded?) : True, output : N 
 color : (128,255,160) , result (if succeeded?) : True, output : N 
 color : (128,255,192) , result (if succeeded?) : True, output : N 
-color : (128,255,224) , result (if succeeded?) : False, output : Z 
-color : (128,255,255) , result (if succeeded?) : False, output : Z 
+color : (128,255,224) , result (if succeeded?) : True, output : N 
+color : (128,255,255) , result (if succeeded?) : True, output : N 
 color : (160,0,0) , result (if succeeded?) : True, output : N 
 color : (160,0,32) , result (if succeeded?) : True, output : N 
 color : (160,0,64) , result (if succeeded?) : True, output : N 
@@ -455,36 +455,36 @@ color : (160,160,64) , result (if succeeded?) : True, output : N
 color : (160,160,96) , result (if succeeded?) : True, output : N 
 color : (160,160,128) , result (if succeeded?) : True, output : N 
 color : (160,160,160) , result (if succeeded?) : True, output : N 
-color : (160,160,192) , result (if succeeded?) : True, output : N 
-color : (160,160,224) , result (if succeeded?) : True, output : N 
-color : (160,160,255) , result (if succeeded?) : True, output : N 
+color : (160,160,192) , result (if succeeded?) : False, output :  
+color : (160,160,224) , result (if succeeded?) : False, output :  
+color : (160,160,255) , result (if succeeded?) : False, output :  
 color : (160,192,0) , result (if succeeded?) : True, output : N 
 color : (160,192,32) , result (if succeeded?) : True, output : N 
 color : (160,192,64) , result (if succeeded?) : True, output : N 
 color : (160,192,96) , result (if succeeded?) : True, output : N 
 color : (160,192,128) , result (if succeeded?) : True, output : N 
-color : (160,192,160) , result (if succeeded?) : True, output : N 
-color : (160,192,192) , result (if succeeded?) : False, output : ZN 
-color : (160,192,224) , result (if succeeded?) : True, output : N 
-color : (160,192,255) , result (if succeeded?) : True, output : N 
+color : (160,192,160) , result (if succeeded?) : False, output :  
+color : (160,192,192) , result (if succeeded?) : False, output :  
+color : (160,192,224) , result (if succeeded?) : False, output :  
+color : (160,192,255) , result (if succeeded?) : False, output :  
 color : (160,224,0) , result (if succeeded?) : True, output : N 
 color : (160,224,32) , result (if succeeded?) : True, output : N 
 color : (160,224,64) , result (if succeeded?) : True, output : N 
 color : (160,224,96) , result (if succeeded?) : True, output : N 
 color : (160,224,128) , result (if succeeded?) : True, output : N 
-color : (160,224,160) , result (if succeeded?) : True, output : N 
-color : (160,224,192) , result (if succeeded?) : False, output : Z 
-color : (160,224,224) , result (if succeeded?) : False, output : ZN 
-color : (160,224,255) , result (if succeeded?) : False, output : Z 
+color : (160,224,160) , result (if succeeded?) : False, output :  
+color : (160,224,192) , result (if succeeded?) : False, output :  
+color : (160,224,224) , result (if succeeded?) : False, output :  
+color : (160,224,255) , result (if succeeded?) : False, output :  
 color : (160,255,0) , result (if succeeded?) : True, output : N 
 color : (160,255,32) , result (if succeeded?) : True, output : N 
 color : (160,255,64) , result (if succeeded?) : True, output : N 
 color : (160,255,96) , result (if succeeded?) : True, output : N 
 color : (160,255,128) , result (if succeeded?) : True, output : N 
-color : (160,255,160) , result (if succeeded?) : True, output : N 
-color : (160,255,192) , result (if succeeded?) : False, output : Z 
-color : (160,255,224) , result (if succeeded?) : False, output : Z 
-color : (160,255,255) , result (if succeeded?) : False, output : Z 
+color : (160,255,160) , result (if succeeded?) : False, output :  
+color : (160,255,192) , result (if succeeded?) : False, output :  
+color : (160,255,224) , result (if succeeded?) : False, output :  
+color : (160,255,255) , result (if succeeded?) : False, output :  
 color : (192,0,0) , result (if succeeded?) : True, output : N 
 color : (192,0,32) , result (if succeeded?) : True, output : N 
 color : (192,0,64) , result (if succeeded?) : True, output : N 
@@ -535,37 +535,37 @@ color : (192,160,32) , result (if succeeded?) : True, output : N
 color : (192,160,64) , result (if succeeded?) : True, output : N 
 color : (192,160,96) , result (if succeeded?) : True, output : N 
 color : (192,160,128) , result (if succeeded?) : True, output : N 
-color : (192,160,160) , result (if succeeded?) : True, output : N 
-color : (192,160,192) , result (if succeeded?) : True, output : N 
-color : (192,160,224) , result (if succeeded?) : True, output : N 
-color : (192,160,255) , result (if succeeded?) : True, output : N 
+color : (192,160,160) , result (if succeeded?) : False, output :  
+color : (192,160,192) , result (if succeeded?) : False, output :  
+color : (192,160,224) , result (if succeeded?) : False, output :  
+color : (192,160,255) , result (if succeeded?) : False, output :  
 color : (192,192,0) , result (if succeeded?) : True, output : N 
 color : (192,192,32) , result (if succeeded?) : True, output : N 
 color : (192,192,64) , result (if succeeded?) : True, output : N 
 color : (192,192,96) , result (if succeeded?) : True, output : N 
-color : (192,192,128) , result (if succeeded?) : True, output : N 
-color : (192,192,160) , result (if succeeded?) : False, output : ZN 
-color : (192,192,192) , result (if succeeded?) : False, output : ZN 
-color : (192,192,224) , result (if succeeded?) : False, output : ZN 
-color : (192,192,255) , result (if succeeded?) : True, output : N 
+color : (192,192,128) , result (if succeeded?) : False, output :  
+color : (192,192,160) , result (if succeeded?) : False, output :  
+color : (192,192,192) , result (if succeeded?) : False, output :  
+color : (192,192,224) , result (if succeeded?) : False, output :  
+color : (192,192,255) , result (if succeeded?) : False, output :  
 color : (192,224,0) , result (if succeeded?) : True, output : N 
 color : (192,224,32) , result (if succeeded?) : True, output : N 
-color : (192,224,64) , result (if succeeded?) : True, output : N 
-color : (192,224,96) , result (if succeeded?) : True, output : N 
-color : (192,224,128) , result (if succeeded?) : True, output : N 
-color : (192,224,160) , result (if succeeded?) : False, output : Z 
-color : (192,224,192) , result (if succeeded?) : False, output : ZN 
-color : (192,224,224) , result (if succeeded?) : False, output : ZN 
-color : (192,224,255) , result (if succeeded?) : False, output : ZN 
+color : (192,224,64) , result (if succeeded?) : False, output :  
+color : (192,224,96) , result (if succeeded?) : False, output :  
+color : (192,224,128) , result (if succeeded?) : False, output :  
+color : (192,224,160) , result (if succeeded?) : False, output :  
+color : (192,224,192) , result (if succeeded?) : False, output :  
+color : (192,224,224) , result (if succeeded?) : False, output :  
+color : (192,224,255) , result (if succeeded?) : False, output :  
 color : (192,255,0) , result (if succeeded?) : True, output : N 
-color : (192,255,32) , result (if succeeded?) : True, output : N 
-color : (192,255,64) , result (if succeeded?) : True, output : N 
-color : (192,255,96) , result (if succeeded?) : False, output : < 
-color : (192,255,128) , result (if succeeded?) : False, output : < 
-color : (192,255,160) , result (if succeeded?) : True, output : N 
-color : (192,255,192) , result (if succeeded?) : True, output : N 
-color : (192,255,224) , result (if succeeded?) : False, output : Z 
-color : (192,255,255) , result (if succeeded?) : False, output : Z 
+color : (192,255,32) , result (if succeeded?) : False, output :  
+color : (192,255,64) , result (if succeeded?) : False, output :  
+color : (192,255,96) , result (if succeeded?) : False, output :  
+color : (192,255,128) , result (if succeeded?) : False, output :  
+color : (192,255,160) , result (if succeeded?) : False, output :  
+color : (192,255,192) , result (if succeeded?) : False, output :  
+color : (192,255,224) , result (if succeeded?) : False, output :  
+color : (192,255,255) , result (if succeeded?) : False, output :  
 color : (224,0,0) , result (if succeeded?) : True, output : N 
 color : (224,0,32) , result (if succeeded?) : True, output : N 
 color : (224,0,64) , result (if succeeded?) : True, output : N 
@@ -608,44 +608,44 @@ color : (224,128,64) , result (if succeeded?) : True, output : N
 color : (224,128,96) , result (if succeeded?) : True, output : N 
 color : (224,128,128) , result (if succeeded?) : True, output : N 
 color : (224,128,160) , result (if succeeded?) : True, output : N 
-color : (224,128,192) , result (if succeeded?) : True, output : N 
-color : (224,128,224) , result (if succeeded?) : True, output : N 
-color : (224,128,255) , result (if succeeded?) : True, output : N 
+color : (224,128,192) , result (if succeeded?) : False, output :  
+color : (224,128,224) , result (if succeeded?) : False, output :  
+color : (224,128,255) , result (if succeeded?) : False, output :  
 color : (224,160,0) , result (if succeeded?) : True, output : N 
 color : (224,160,32) , result (if succeeded?) : True, output : N 
 color : (224,160,64) , result (if succeeded?) : True, output : N 
 color : (224,160,96) , result (if succeeded?) : True, output : N 
 color : (224,160,128) , result (if succeeded?) : True, output : N 
-color : (224,160,160) , result (if succeeded?) : True, output : N 
-color : (224,160,192) , result (if succeeded?) : True, output : N 
-color : (224,160,224) , result (if succeeded?) : True, output : N 
-color : (224,160,255) , result (if succeeded?) : True, output : N 
+color : (224,160,160) , result (if succeeded?) : False, output :  
+color : (224,160,192) , result (if succeeded?) : False, output :  
+color : (224,160,224) , result (if succeeded?) : False, output :  
+color : (224,160,255) , result (if succeeded?) : False, output :  
 color : (224,192,0) , result (if succeeded?) : True, output : N 
 color : (224,192,32) , result (if succeeded?) : True, output : N 
 color : (224,192,64) , result (if succeeded?) : True, output : N 
 color : (224,192,96) , result (if succeeded?) : True, output : N 
-color : (224,192,128) , result (if succeeded?) : False, output : Z 
-color : (224,192,160) , result (if succeeded?) : False, output : Z 
-color : (224,192,192) , result (if succeeded?) : False, output : ZN 
-color : (224,192,224) , result (if succeeded?) : False, output : ZN 
-color : (224,192,255) , result (if succeeded?) : False, output : ZN 
+color : (224,192,128) , result (if succeeded?) : True, output : N 
+color : (224,192,160) , result (if succeeded?) : False, output :  
+color : (224,192,192) , result (if succeeded?) : False, output :  
+color : (224,192,224) , result (if succeeded?) : False, output :  
+color : (224,192,255) , result (if succeeded?) : False, output :  
 color : (224,224,0) , result (if succeeded?) : True, output : N 
 color : (224,224,32) , result (if succeeded?) : True, output : N 
-color : (224,224,64) , result (if succeeded?) : True, output : N 
-color : (224,224,96) , result (if succeeded?) : True, output : N 
-color : (224,224,128) , result (if succeeded?) : True, output : N 
-color : (224,224,160) , result (if succeeded?) : False, output : Z 
-color : (224,224,192) , result (if succeeded?) : False, output : ZN 
-color : (224,224,224) , result (if succeeded?) : False, output : ZN 
-color : (224,224,255) , result (if succeeded?) : False, output : ZN 
-color : (224,255,0) , result (if succeeded?) : True, output : N 
-color : (224,255,32) , result (if succeeded?) : True, output : N 
-color : (224,255,64) , result (if succeeded?) : True, output : N 
-color : (224,255,96) , result (if succeeded?) : False, output : < 
-color : (224,255,128) , result (if succeeded?) : False, output : < 
-color : (224,255,160) , result (if succeeded?) : False, output : < 
-color : (224,255,192) , result (if succeeded?) : False, output : < 
-color : (224,255,224) , result (if succeeded?) : True, output : N 
+color : (224,224,64) , result (if succeeded?) : False, output :  
+color : (224,224,96) , result (if succeeded?) : False, output :  
+color : (224,224,128) , result (if succeeded?) : False, output :  
+color : (224,224,160) , result (if succeeded?) : False, output :  
+color : (224,224,192) , result (if succeeded?) : False, output :  
+color : (224,224,224) , result (if succeeded?) : False, output :  
+color : (224,224,255) , result (if succeeded?) : False, output :  
+color : (224,255,0) , result (if succeeded?) : False, output :  
+color : (224,255,32) , result (if succeeded?) : False, output :  
+color : (224,255,64) , result (if succeeded?) : False, output :  
+color : (224,255,96) , result (if succeeded?) : False, output :  
+color : (224,255,128) , result (if succeeded?) : False, output :  
+color : (224,255,160) , result (if succeeded?) : False, output :  
+color : (224,255,192) , result (if succeeded?) : False, output :  
+color : (224,255,224) , result (if succeeded?) : False, output :  
 color : (224,255,255) , result (if succeeded?) : False, output :  
 color : (255,0,0) , result (if succeeded?) : True, output : N 
 color : (255,0,32) , result (if succeeded?) : True, output : N 
@@ -689,38 +689,38 @@ color : (255,128,64) , result (if succeeded?) : True, output : N
 color : (255,128,96) , result (if succeeded?) : True, output : N 
 color : (255,128,128) , result (if succeeded?) : True, output : N 
 color : (255,128,160) , result (if succeeded?) : True, output : N 
-color : (255,128,192) , result (if succeeded?) : True, output : N 
-color : (255,128,224) , result (if succeeded?) : True, output : N 
-color : (255,128,255) , result (if succeeded?) : False, output : Z 
+color : (255,128,192) , result (if succeeded?) : False, output :  
+color : (255,128,224) , result (if succeeded?) : False, output :  
+color : (255,128,255) , result (if succeeded?) : False, output :  
 color : (255,160,0) , result (if succeeded?) : True, output : N 
 color : (255,160,32) , result (if succeeded?) : True, output : N 
 color : (255,160,64) , result (if succeeded?) : True, output : N 
 color : (255,160,96) , result (if succeeded?) : True, output : N 
-color : (255,160,128) , result (if succeeded?) : False, output : Z 
-color : (255,160,160) , result (if succeeded?) : False, output : Z 
-color : (255,160,192) , result (if succeeded?) : False, output : Z 
-color : (255,160,224) , result (if succeeded?) : False, output : Z 
-color : (255,160,255) , result (if succeeded?) : False, output : Z 
+color : (255,160,128) , result (if succeeded?) : True, output : N 
+color : (255,160,160) , result (if succeeded?) : False, output :  
+color : (255,160,192) , result (if succeeded?) : False, output :  
+color : (255,160,224) , result (if succeeded?) : False, output :  
+color : (255,160,255) , result (if succeeded?) : False, output :  
 color : (255,192,0) , result (if succeeded?) : True, output : N 
 color : (255,192,32) , result (if succeeded?) : True, output : N 
 color : (255,192,64) , result (if succeeded?) : True, output : N 
 color : (255,192,96) , result (if succeeded?) : True, output : N 
-color : (255,192,128) , result (if succeeded?) : False, output : Z 
-color : (255,192,160) , result (if succeeded?) : False, output : Z 
-color : (255,192,192) , result (if succeeded?) : False, output : Z 
-color : (255,192,224) , result (if succeeded?) : False, output : Z 
-color : (255,192,255) , result (if succeeded?) : False, output : Z 
+color : (255,192,128) , result (if succeeded?) : True, output : N 
+color : (255,192,160) , result (if succeeded?) : False, output :  
+color : (255,192,192) , result (if succeeded?) : False, output :  
+color : (255,192,224) , result (if succeeded?) : False, output :  
+color : (255,192,255) , result (if succeeded?) : False, output :  
 color : (255,224,0) , result (if succeeded?) : True, output : N 
-color : (255,224,32) , result (if succeeded?) : True, output : N 
-color : (255,224,64) , result (if succeeded?) : True, output : N 
-color : (255,224,96) , result (if succeeded?) : True, output : N 
-color : (255,224,128) , result (if succeeded?) : True, output : N 
-color : (255,224,160) , result (if succeeded?) : False, output : Z 
-color : (255,224,192) , result (if succeeded?) : False, output : Z 
-color : (255,224,224) , result (if succeeded?) : False, output : Z 
-color : (255,224,255) , result (if succeeded?) : False, output : iz 
-color : (255,255,0) , result (if succeeded?) : True, output : N 
-color : (255,255,32) , result (if succeeded?) : True, output : N 
+color : (255,224,32) , result (if succeeded?) : False, output :  
+color : (255,224,64) , result (if succeeded?) : False, output :  
+color : (255,224,96) , result (if succeeded?) : False, output :  
+color : (255,224,128) , result (if succeeded?) : False, output :  
+color : (255,224,160) , result (if succeeded?) : False, output :  
+color : (255,224,192) , result (if succeeded?) : False, output :  
+color : (255,224,224) , result (if succeeded?) : False, output :  
+color : (255,224,255) , result (if succeeded?) : False, output :  
+color : (255,255,0) , result (if succeeded?) : False, output :  
+color : (255,255,32) , result (if succeeded?) : False, output :  
 color : (255,255,64) , result (if succeeded?) : False, output :  
 color : (255,255,96) , result (if succeeded?) : False, output :  
 color : (255,255,128) , result (if succeeded?) : False, output :  
@@ -728,4 +728,4 @@ color : (255,255,160) , result (if succeeded?) : False, output :
 color : (255,255,192) , result (if succeeded?) : False, output :  
 color : (255,255,224) , result (if succeeded?) : False, output :  
 color : (255,255,255) , result (if succeeded?) : False, output :  
-total iteration : 729 , succeed : 667
+total iteration : 729 , succeed : 635

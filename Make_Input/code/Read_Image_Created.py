@@ -7,19 +7,26 @@ from datasets import load_dataset
 import matplotlib.pyplot as plt
 import torch.nn as nn
 from tqdm import tqdm
+import os
 
 processor = DonutProcessor.from_pretrained("naver-clova-ix/donut-base")
 model = VisionEncoderDecoderModel.from_pretrained("naver-clova-ix/donut-base")
 device = "cuda" if torch.cuda.is_available() else "cpu"
-model.encoder.encoder.layers[3].blocks[1].intermediate.dense.weight = nn.Parameter(torch.zeros_like(model.encoder.encoder.layers[3].blocks[1].intermediate.dense.weight))
+with torch.no_grad():
+    for i in range(2):
+        for j in range(500,1138,1):
+            model.encoder.encoder.layers[3].blocks[i].intermediate.dense.weight[j] = 0.0
 
 model.to(device)
 dataset = load_dataset("naver-clova-ix/cord-v2", split="test")
 
-make_input = Make_input(text='b',font_size=90,text_pos=(512,1344))
-#img,txt = make_input.create_image()
+make_input = Make_input(text='あいうえおかきくけこさしすせそ',font_size=90,text_pos=(0,256))
 img, _ = make_input.create_image()
-#img.show()
+abs_path = os.path.dirname(__file__)
+
+#result_path = os.path.join(result_path,file_name)
+#img.save(os.path.join(abs_path,result_path))
+
 task_prompt = "<s_iitcdip>"
 decoder_input_ids = processor.tokenizer(task_prompt, add_special_tokens=False, return_tensors="pt").input_ids
 pixel_values = processor(img, return_tensors="pt").pixel_values
