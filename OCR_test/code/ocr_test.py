@@ -14,7 +14,7 @@ processor = DonutProcessor.from_pretrained("naver-clova-ix/donut-base")
 model = VisionEncoderDecoderModel.from_pretrained("naver-clova-ix/donut-base")
 device = "cuda" if torch.cuda.is_available() else "cpu"
 model.to(device)
-
+print(model.decoder)
 
 dataset = load_dataset("naver-clova-ix/cord-v2", split="test")
 

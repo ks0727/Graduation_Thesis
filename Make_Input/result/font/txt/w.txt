@@ -1,0 +1,6 @@
+result of the word : w
+font : /usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc , result (if succeeded?) : False, output : W 
+font : /usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc , result (if succeeded?) : False, output : W 
+font : /usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc , result (if succeeded?) : False, output : W 
+font : /usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc , result (if succeeded?) : False, output : W 
+total iteration : 4 , succeed : 0

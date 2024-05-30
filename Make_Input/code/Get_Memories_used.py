@@ -55,6 +55,7 @@ def main()->int:
     
     pixel_values = processor(image, return_tensors="pt").pixel_values
     _ = model.encoder(pixel_values.to(device))
+    
     result_dict = {}
     
     mx_memories = []

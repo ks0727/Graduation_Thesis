@@ -1,0 +1,374 @@
+{
+  "a": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "b": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "c": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": false,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": false,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": false,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": false
+  },
+  "d": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "e": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "f": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "g": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "h": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "i": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "j": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "k": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "l": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": false,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": false,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": false
+  },
+  "m": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "n": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "o": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": false,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "p": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "q": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "r": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "s": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": false,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": false,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": false,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": false
+  },
+  "t": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "u": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "v": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": false,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": false,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": false,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": false
+  },
+  "w": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": false,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": false,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": false,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": false
+  },
+  "x": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": false,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": false,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": false,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": false
+  },
+  "y": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "z": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": false,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": false,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": false,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": false
+  },
+  "A": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "B": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "C": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "D": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "E": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "F": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "G": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "H": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "I": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": false,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "J": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "K": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "L": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "M": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "N": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "O": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": false,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "P": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "Q": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "R": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "S": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "T": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "U": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "V": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "W": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "X": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "Y": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "Z": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "0": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "1": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "2": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "3": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "4": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "5": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "6": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "7": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "8": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  },
+  "9": {
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc": true,
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc": true
+  }
+}

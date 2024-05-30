@@ -14,12 +14,12 @@ test_pos:  (x,y) left top position of the text
 """
 class Make_input:
     def __init__(self,text:str='A',
-                font_size:int=50,
+                font_size:int=90,
                 font:str='/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc',
                 image_size:Tuple[int,int]=(1920,2560),
                 text_color:Tuple[int,int,int]=(0,0,0),
                 bg_color:Tuple[int,int,int]=(255,255,255),
-                text_pos:Tuple[int,int]=(100,500)) -> None:
+                text_pos:Tuple[int,int]=(0,256)) -> None:
         self.text = text
         self.font_size = font_size
         self.font = font
